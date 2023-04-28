@@ -206,8 +206,8 @@ document.addEventListener("click",(e) => {
 
 const wishlist=document.querySelector(".wishlist")
 
-wishlist.addEventListener("click",() => {
-
+wishlist.addEventListener("click",(eo) => {
+eo.preventDefault()
 wishlist.classList.toggle("myheart")
 })
 
@@ -238,26 +238,27 @@ const ricloseelement=document.querySelectorAll(".ricloseelement")
     item.innerHTML =  `$ ${resum}`;
   }
     })
-// ***********************************************************
-const ccgg=eo.target.parentElement.parentElement.querySelector(".object-cover a img").src
-console.log(ccgg)
-const body=document.querySelector("#body")
-const allccgg=body.querySelectorAll(".item")
-console.log(allccgg)
+// **************** delete disabled when close product from mini cart ***************************************
+const imgsrc=eo.target.parentElement.parentElement.querySelector(".object-cover a img").src
+console.log(imgsrc)
+const allimg=document.querySelectorAll(".keybuy img")
+console.log(allimg)
 
-allccgg.forEach(item => {
-  // item.addEventListener("click",(eo) => {
-  const ttccgg=item.querySelector("img").src
-  console.log(ttccgg)
-if (ccgg==ttccgg) {
-  eo.target.parentElement.parentElement.parentElement.parentElement.querySelector(".new")
+allimg.forEach(item => {
+  const allimgsrc=item.src;
+  console.log(allimgsrc)
+
+if (imgsrc == allimgsrc) {
+const imgbuy=item.parentElement.parentElement.parentElement.parentElement
+console.log(imgbuy)
+const disablebuy=imgbuy.querySelector(".newbutton")
+console.log(disablebuy)
+disablebuy.removeAttribute("disabled")
 }
-
-
-
-  // })
-});
-// *********************************************************
+  })
+  eo.preventDefault()
+// });
+// ********************* delete product from mini cart ************************************
 eo.target.parentElement.parentElement.remove()
   // ****************************************************
 // if (eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.contains("show")) {
@@ -269,7 +270,8 @@ eo.target.parentElement.parentElement.remove()
     }
   })
 // =================== in cart page only=============================================
-
+// ===================delete product from list=======================================
+// ==================================================================================
 ricloseelement.forEach(item => {
   item.addEventListener("click",(eo) => {
     // eo.preventDefault();
@@ -446,37 +448,71 @@ if (calccartbody.innerHTML=="Not Products found Yet !!! <br> <br>") {
 //     finaltotal.innerHTML=`$${oursubtotal}`
 //     item.innerHTML =`$ ${oursubtotal}`;
 
-
 // =======================================================================
-
-
-
-
-
-
-
-
-
-
 })
-
-
-
-
-
-
-
 })
     });
 
 
 
+// =============================================================================
+//                page offer   -  write a review                           
+// =============================================================================
 
 
 
+const ratethis=document.querySelector(".rate-this")
+const namereview=document.querySelector(".namereview")
+const summaryreview=document.querySelector(".summaryreview")
+const textareareview=document.querySelector(".textareareview")
+const reviewblockbody=document.querySelector(".review-block-body")
+// console.log(ratethis.innerHTML)
+const newreview=document.querySelector("#newreview")
 
 
 
+newreview.addEventListener("click",(eo) => {
+  eo.preventDefault()
+
+
+  let d=new Date()
+  // console.log(d)
+  let time=d.getDate()
+  console.log(time)
+  let month=d.getMonth()
+  console.log(month)
+  let year=d.getFullYear()
+  console.log(year)
+
+const creatnewreview=`
+<li class="item">
+<div class="review-form">
+  <p class="person">${namereview.value}</p>
+  <p class="mini-text">On ${time}/${month}/${year}</p>
+</div>
+<div class="review-rating rating">
+<div class="stars"></div>
+
+</div>
+<div class="review-title">
+  <p>${summaryreview.value}</p>
+</div>
+<div class="review-taxt">
+  <p>${textareareview.value}</p>
+</div>
+</li>
+`;
+
+reviewblockbody.innerHTML+=creatnewreview;
+
+setTimeout(() => {
+  console.log(namereview.value)
+  console.log(summaryreview.value)
+  console.log(textareareview.value) 
+  console.log(ratethis.innerHTML)
+}, 1000);
+
+})
 
 
 
