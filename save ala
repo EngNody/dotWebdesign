@@ -1,0 +1,129 @@
+// =====================================
+// add ri-heart-line 
+// =====================================
+const favnumber=document.querySelector(".item-number-heart");
+const checkheart=document.querySelector(".contentheart")
+const checkheartitems=document.querySelectorAll(".contentheart .item")
+console.log(checkheartitems)
+const ourheart=document.querySelectorAll(".item .hoverable li i.ri-heart-line")
+
+// ================== chang number items==========================================
+setInterval(() => {
+  const checkheartitems=document.querySelectorAll(".contentheart .item");
+let favlength=Number(checkheartitems.length)
+  favnumber.innerHTML=favlength
+}, 100);
+// =================== the ccontent text========================================
+  if (checkheartitems.length=="") {
+    checkheart.innerHTML="Not Products favorite found Yet !!! <br>";
+  }
+  // ======================= when click on heart ===============================================
+  ourheart.forEach(item => {
+  
+item.addEventListener("click",(eo) => {
+eo.preventDefault();
+
+const nameitemminicart=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("h3").innerText;
+const srcitemminicart=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("img").src;    
+// console.log(srcitemminicart)
+const priceitemminicart=Number(eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));    
+// ***
+const ourheartitem=`
+<li class="item favitems">
+<div class="thumbnail object-cover">
+<div><img src="${srcitemminicart}" alt="" class="${srcitemminicart}"></div>
+</div>
+<div class="item-content">
+<p><a href="#">${nameitemminicart}</a></p>
+<span class="price">
+<div>
+  <span class="current">$${priceitemminicart}</span>
+  <span class="fly-item"><span>2X</span></span>
+</div>
+</span>
+</div>
+<a href="#" class="item-remove closeminicart">
+<i class="ri-close-line"></i></a>
+</li>
+`;
+// ***
+if (eo.target.classList=="ri-heart-line") {
+
+  if (checkheart.innerHTML=="Not Products favorite found Yet !!! <br>") {
+    checkheart.innerHTML = ourheartitem;
+  
+  }else{
+    checkheart.innerHTML += ourheartitem;
+  }
+}
+
+eo.target.classList.toggle("primary-color");
+
+if (eo.target.classList=="ri-heart-line primary-color") {
+  // all hearts clicked
+console.log(ourheart)
+// src image for imaged that clicked
+console.log(srcitemminicart)
+
+  const favitemsminicart=document.querySelectorAll(".favitems img");
+  console.log(favitemsminicart)
+
+favitemsminicart.forEach(item => {
+// mini cart favorate elements
+let hisrc=item.src;
+console.log(hisrc)
+
+if (hisrc == srcitemminicart) {
+console.log(  item.querySelector("srcitemminicart"))
+// console.log("hggggggggggggggggggggggggggggggggg")
+//   // .remove();
+// // item.parentElement.parentElement.parentElement.style.display="none";
+
+  // if (checkheartitems.length=="") {
+  //   checkheart.innerHTML="Not Products favorite found Yet !!! <br>";
+  // }
+}
+});
+// }
+}
+//   if(eo.target.classList=="ri-heart-line"){
+//     // const hatsrc=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("img").src;
+//     // console.log(hatsrc)
+})
+});
+
+
+
+
+
+
+
+
+
+
+// // setInterval(() => {
+//   favitems.forEach(item => {
+//     let hisrc=item.src;
+//     console.log(hisrc)
+//   })
+// // }, 1000);
+
+
+
+// // if (srcitemminicart==hisrc) {
+//   // console.log("hiiiiiiiiiiiiiiiiiiiiiiiiii")
+
+//   // if (eo.target.classList=="ri-heart-line primary-color") {
+
+//   //   if (checkheart.innerHTML=="Not Products found Yet !!! <br>") {
+//   //     checkheart.innerHTML = ourheartitem;
+    
+//   //   }else{
+//   //     checkheart.innerHTML += ourheartitem;
+    
+//   //   }
+//   // }
+// // }
+// // });
+
+

@@ -467,53 +467,145 @@ const summaryreview=document.querySelector(".summaryreview")
 const textareareview=document.querySelector(".textareareview")
 const reviewblockbody=document.querySelector(".review-block-body")
 // console.log(ratethis.innerHTML)
-const newreview=document.querySelector("#newreview")
+const newreview=document.querySelector("#newreview");
 
 
 
-newreview.addEventListener("click",(eo) => {
-  eo.preventDefault()
+// newreview.addEventListener("click",(eo) => {
+//   eo.preventDefault()
 
+//   let d=new Date()
+//   // console.log(d)
+//   let time=d.getDate()
+//   console.log(time)
+//   let month=d.getMonth()
+//   console.log(month)
+//   let year=d.getFullYear()
+//   console.log(year)
 
-  let d=new Date()
-  // console.log(d)
-  let time=d.getDate()
-  console.log(time)
-  let month=d.getMonth()
-  console.log(month)
-  let year=d.getFullYear()
-  console.log(year)
+// const creatnewreview=`
+// <li class="item">
+// <div class="review-form">
+//   <p class="person">${namereview.value}</p>
+//   <p class="mini-text">On ${time}/${month}/${year}</p>
+// </div>
+// <div class="review-rating rating">
+// <div class="stars"></div>
 
-const creatnewreview=`
-<li class="item">
-<div class="review-form">
-  <p class="person">${namereview.value}</p>
-  <p class="mini-text">On ${time}/${month}/${year}</p>
+// </div>
+// <div class="review-title">
+//   <p>${summaryreview.value}</p>
+// </div>
+// <div class="review-taxt">
+//   <p>${textareareview.value}</p>
+// </div>
+// </li>
+// `;
+
+// reviewblockbody.innerHTML+=creatnewreview;
+
+// setTimeout(() => {
+//   console.log(namereview.value)
+//   console.log(summaryreview.value)
+//   console.log(textareareview.value) 
+//   console.log(ratethis.innerHTML)
+// }, 1000);
+
+// })
+
+// =====================================
+// add ri-heart-line 
+// =====================================
+
+const checkheart=document.querySelector(".contentheart")
+console.log(checkheart)
+
+const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
+console.log(ourheart)
+
+checkheart.innerHTML="Not Products found Yet !!! <br>";
+
+ourheart.forEach(item => {
+  
+item.addEventListener("click",(eo) => {
+eo.preventDefault();
+
+eo.target.classList.toggle("primary-color")
+
+  const nameitemminicart=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("h3").innerText;
+const srcitemminicart=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("img").src;    
+const priceitemminicart=Number(eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));    
+
+const ourheartitem=`
+<li class="item favitems">
+<div class="thumbnail object-cover">
+<a href="#"><img src="${srcitemminicart}" alt=""></a>
 </div>
-<div class="review-rating rating">
-<div class="stars"></div>
-
+<div class="item-content">
+<p><a href="#">${nameitemminicart}</a></p>
+<span class="price">
+<div>
+  <span class="current">$${priceitemminicart}</span>
+  <span class="fly-item"><span>2X</span></span>
 </div>
-<div class="review-title">
-  <p>${summaryreview.value}</p>
+</span>
 </div>
-<div class="review-taxt">
-  <p>${textareareview.value}</p>
-</div>
+<a href="#" class="item-remove closeminicart">
+<i class="ri-close-line"></i></a>
 </li>
 `;
 
-reviewblockbody.innerHTML+=creatnewreview;
 
-setTimeout(() => {
-  console.log(namereview.value)
-  console.log(summaryreview.value)
-  console.log(textareareview.value) 
-  console.log(ratethis.innerHTML)
-}, 1000);
+if (eo.target.classList=="ri-heart-line primary-color") {
+
+  if (checkheart.innerHTML=="Not Products found Yet !!! <br>") {
+    checkheart.innerHTML = ourheartitem;
+  
+  }else{
+    checkheart.innerHTML += ourheartitem;
+  
+  }
+}
+
+
+// if(!eo.target.classList=="ri-heart-line primary-color"){
+  if(eo.target.classList=="ri-heart-line"){
+    const haaat=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("img").src;
+console.log(haaat)
+
+
+
+const favitems=document.querySelectorAll(".favitems img");
+console.log(favitems)
+
+favitems.forEach(item => {
+const hisrc=item.src
+// console.log(hisrc)
+// console.log(srcitemminicart)
+
+if (hisrc == srcitemminicart) {
+  // console.log(item)
+  item.parentElement.parentElement.parentElement.remove();
+
+}
+
+
+});
+
+}
+
+
+
+
+
+
+
+
+
 
 })
 
+});
 
 
 
@@ -524,14 +616,30 @@ setTimeout(() => {
 
 
 
+// // setInterval(() => {
+//   favitems.forEach(item => {
+//     let hisrc=item.src;
+//     console.log(hisrc)
+//   })
+// // }, 1000);
 
 
 
+// // if (srcitemminicart==hisrc) {
+//   // console.log("hiiiiiiiiiiiiiiiiiiiiiiiiii")
 
+//   // if (eo.target.classList=="ri-heart-line primary-color") {
 
-
-
-
+//   //   if (checkheart.innerHTML=="Not Products found Yet !!! <br>") {
+//   //     checkheart.innerHTML = ourheartitem;
+    
+//   //   }else{
+//   //     checkheart.innerHTML += ourheartitem;
+    
+//   //   }
+//   // }
+// // }
+// // });
 
 
 
