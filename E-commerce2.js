@@ -335,9 +335,7 @@ totaljs.forEach(item => {
 // =====================================================================
 
 const thetotal=document.querySelectorAll(".thetotal")
-console.log(thetotal)
 const buybuttons=document.querySelectorAll(".newbutton")
-console.log(buybuttons)
 
 
 buybuttons.forEach(item => {
@@ -516,14 +514,24 @@ const newreview=document.querySelector("#newreview");
 // =====================================
 // add ri-heart-line 
 // =====================================
-
-const checkheart=document.querySelector(".contentheart")
-console.log(checkheart)
-
+const favnumber=document.querySelectorAll(".item-number-heart");
+const checkheart=document.querySelector("ul.contentheart")
 const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
-console.log(ourheart)
 
-checkheart.innerHTML="Not Products found Yet !!! <br>";
+
+// ================== chang number items==========================================
+setInterval(() => {
+  const checkheartitems=document.querySelectorAll(".contentheart .item");
+let favlength=Number(checkheartitems.length)
+favnumber.forEach(item => {
+  item.innerHTML=favlength
+});
+}, 100);
+
+// =================== the content text ========================================
+checkheart.innerHTML="Not Products Favorite Found Yet !!! <br>";
+
+// ================== when click for each heart ==================================================
 
 ourheart.forEach(item => {
   
@@ -542,7 +550,7 @@ const ourheartitem=`
 <a href="#"><img src="${srcitemminicart}" alt=""></a>
 </div>
 <div class="item-content">
-<p><a href="#">${nameitemminicart}</a></p>
+<p><div>${nameitemminicart}</div></p>
 <span class="price">
 <div>
   <span class="current">$${priceitemminicart}</span>
@@ -555,93 +563,49 @@ const ourheartitem=`
 </li>
 `;
 
-
+// ============= Not Products Favorite Found Yet !!! <br> =========================
 if (eo.target.classList=="ri-heart-line primary-color") {
 
-  if (checkheart.innerHTML=="Not Products found Yet !!! <br>") {
+  if (checkheart.innerHTML=="Not Products Favorite Found Yet !!! <br>") {
     checkheart.innerHTML = ourheartitem;
-  
-  }else{
-    checkheart.innerHTML += ourheartitem;
-  
   }
-}
+  else{
+    checkheart.innerHTML += ourheartitem;
+  }};
 
-
-// if(!eo.target.classList=="ri-heart-line primary-color"){
+setInterval(() => {
+  const checkheartitems=document.querySelectorAll(".contentheart .item");
+  if (checkheartitems.length==0) {
+    checkheart.innerHTML="Not Products Favorite Found Yet !!! <br>";
+  }
+}, 3000);
+// ===================== remove element from mini cart===================================
   if(eo.target.classList=="ri-heart-line"){
-    const haaat=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("img").src;
-console.log(haaat)
-
-
 
 const favitems=document.querySelectorAll(".favitems img");
-console.log(favitems)
 
 favitems.forEach(item => {
 const hisrc=item.src
-// console.log(hisrc)
-// console.log(srcitemminicart)
 
 if (hisrc == srcitemminicart) {
-  // console.log(item)
   item.parentElement.parentElement.parentElement.remove();
 
 }
-
-
 });
-
 }
-
-
-
-
-
-
-
-
-
-
 })
-
 });
+// ============= close favorate heart from cart favorate ===========
+setInterval(() => {
+  const allfavclose=document.querySelectorAll(".favitems .ri-close-line")
 
-
-
-
-
-
-
-
-
-
-// // setInterval(() => {
-//   favitems.forEach(item => {
-//     let hisrc=item.src;
-//     console.log(hisrc)
-//   })
-// // }, 1000);
-
-
-
-// // if (srcitemminicart==hisrc) {
-//   // console.log("hiiiiiiiiiiiiiiiiiiiiiiiiii")
-
-//   // if (eo.target.classList=="ri-heart-line primary-color") {
-
-//   //   if (checkheart.innerHTML=="Not Products found Yet !!! <br>") {
-//   //     checkheart.innerHTML = ourheartitem;
-    
-//   //   }else{
-//   //     checkheart.innerHTML += ourheartitem;
-    
-//   //   }
-//   // }
-// // }
-// // });
-
-
+allfavclose.forEach(item => {
+  item.addEventListener("click",(eo) => {
+    eo.target.parentElement.parentElement.remove();
+    // console.log(    eo.target.parentElement.parentElement.parentElement )
+  })
+});
+}, 1000);
 
 
 
