@@ -415,10 +415,10 @@ position: relative;
     width: 350px;
     top: 41px;
     right: 115px;
-    height: fit-content;
+    /* height: fit-content; */
     max-height: 80.5vh;
     padding: 20px;
-    /* height: 300px; */
+    height: 500px;
     background-color: var(--white-color);
     z-index: 1000;
     box-shadow: rgb(0 0 0 / 30%) 0 10px 50px;
@@ -432,9 +432,16 @@ position: relative;
   opacity: 1;
 }
 .contentheart{
+  /* border: 2px solid blue; */
   width: 100%;
+min-height: 100px;
+/* color: #000; */
 }
 
+.myshowfav{
+  visibility: hidden;
+  opacity: 0;
+}
 
 
 
@@ -2332,6 +2339,33 @@ will-change: visibility 0.5s,opacity 0.5s;
 font-weight: bold;
 color: #000;
 }
+
+.ri-heart-3-fill:hover{
+/* color: orange; */
+/* opacity: 0.5; */
+}
+.showlist{
+  border: 2px solid red;
+position: relative;
+}
+
+.favmob{
+  /* border: 2px solid blue; */
+width: 500px;
+height: 500px;
+/* height: 300px; */
+position: absolute;
+bottom: 68px;
+left: 50%;
+transform: translate(-50%);
+background-color: white;
+padding: 10px;
+/* visibility:hidden;
+opacity: 0; */
+}
+
+
+
 
 /* ============================================= */
 /* overlay */

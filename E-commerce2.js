@@ -211,6 +211,25 @@ eo.preventDefault()
 wishlist.classList.toggle("myheart")
 })
 
+const showlist=document.querySelector(".favmob")
+const minicartheart=document.querySelector(".minicartheart")
+
+// setInterval(() => {
+  // showlist.innerHTML = minicartheart.innerHTML;
+
+// }, 100);
+showlist.addEventListener("click",(eo) => {
+
+})
+
+
+
+
+
+
+
+
+
 // ===============================================================
 // close X elements
 // ===============================================================
@@ -515,22 +534,37 @@ const newreview=document.querySelector("#newreview");
 // add ri-heart-line 
 // =====================================
 const favnumber=document.querySelectorAll(".item-number-heart");
-const checkheart=document.querySelector("ul.contentheart")
+const favnumbermob=document.querySelectorAll(".item-number-heart-mob");
+const checkheart=document.querySelectorAll(".contentheart")
+// console.log(checkheart)
 const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
 
 
-// ================== chang number items==========================================
+// ================== chang number items ==========================================
+// web-mode
 setInterval(() => {
-  const checkheartitems=document.querySelectorAll(".contentheart .item");
+  const ulcheckheartitems=document.querySelector(".contentheart");
+  const checkheartitems=ulcheckheartitems.querySelectorAll(".contentheart .item");
 let favlength=Number(checkheartitems.length)
 favnumber.forEach(item => {
   item.innerHTML=favlength
-});
 }, 100);
 
-// =================== the content text ========================================
-checkheart.innerHTML="Not Products Favorite Found Yet !!! <br>";
+// mobile-mode
+const checkheartitemsmob=document.querySelectorAll(".favmob .contentheart .item");
+let favlengthmob=Number(checkheartitemsmob.length)
+favnumbermob.forEach(item => {
+  item.innerHTML=favlengthmob
+});
+});
 
+
+// =================== the content text =======================================
+
+checkheart.forEach(item => {
+  item.innerHTML="Not Products Favorite Found Yet !!! <br>";
+
+});
 // ================== when click for each heart ==================================================
 
 ourheart.forEach(item => {
@@ -564,21 +598,25 @@ const ourheartitem=`
 `;
 
 // ============= Not Products Favorite Found Yet !!! <br> =========================
-if (eo.target.classList=="ri-heart-line primary-color") {
+checkheart.forEach(item => {
+  if (eo.target.classList=="ri-heart-line primary-color") {
 
-  if (checkheart.innerHTML=="Not Products Favorite Found Yet !!! <br>") {
-    checkheart.innerHTML = ourheartitem;
-  }
-  else{
-    checkheart.innerHTML += ourheartitem;
-  }};
+    if (item.innerHTML=="Not Products Favorite Found Yet !!! <br>") {
+      item.innerHTML = ourheartitem;
+    }
+    else{
+      item.innerHTML += ourheartitem;
+    }};
+});
 
 setInterval(() => {
   const checkheartitems=document.querySelectorAll(".contentheart .item");
-  if (checkheartitems.length==0) {
-    checkheart.innerHTML="Not Products Favorite Found Yet !!! <br>";
+  if (checkheartitems.length == 0){
+    checkheart.forEach(item => {
+      item.innerHTML="Not Products Favorite Found Yet !!! <br>";
+    });
   }
-}, 3000);
+}, 1000);
 // ===================== remove element from mini cart===================================
   if(eo.target.classList=="ri-heart-line"){
 
@@ -598,14 +636,80 @@ if (hisrc == srcitemminicart) {
 // ============= close favorate heart from cart favorate ===========
 setInterval(() => {
   const allfavclose=document.querySelectorAll(".favitems .ri-close-line")
-
+// ========== remove the element================
 allfavclose.forEach(item => {
   item.addEventListener("click",(eo) => {
+eo.preventDefault();
+
+    // ================ remove the same item
     eo.target.parentElement.parentElement.remove();
-    // console.log(    eo.target.parentElement.parentElement.parentElement )
+
+// ========== remove the color from main heart =================
+const itemimgcartfav= eo.target.parentElement.parentElement.querySelector("img").src;
+const mainitemsimgpage=document.querySelectorAll(".keybuy .item img");
+
+mainitemsimgpage.forEach(item => {
+  const ouritemsrc=item.src;
+
+  if (itemimgcartfav == ouritemsrc) {
+    item.parentElement.parentElement.parentElement.querySelector(".ri-heart-line").classList.remove("primary-color");
+  }
+});
+// ================================= remove mob item when click web item
+// ================================= remove mob item minicart when click web item minicart
+const itemimgcartfavmob=document.querySelectorAll(".favmob .item img");
+// console.log(itemimgcartfavmob)
+
+itemimgcartfavmob.forEach(item => {
+  const ouritemsrcmob=item.src;
+  // console.log(ouritemsrcmob)
+
+  if (itemimgcartfav == ouritemsrcmob) {
+  item.parentElement.parentElement.parentElement.remove();
+  }
+
+});
+
+// // // ================================= remove web item when click mob item
+// // // ================================= remove web item minicart when click mob item minicart
+
+const itemimgcartfavweb=document.querySelectorAll(".minicartheart .item img");
+// console.log(itemimgcartfavweb)
+
+itemimgcartfavweb.forEach(item => {
+  const ouritemsrcweb=item.src;
+  // console.log(ouritemsrcweb)
+
+  if ( itemimgcartfav == ouritemsrcweb) {
+  item.parentElement.parentElement.parentElement.remove();
+  }
+
+});
   })
 });
 }, 1000);
+
+// ========================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,11 @@
+// ====================== why the inner html for checkheart removed !!!!!!!!!!!!!!!!!
+setInterval(() => {
+  const checkheartitems=document.querySelectorAll(".contentheart .item");
+  console.log(checkheartitems.length)
+  if (checkheartitems.length == 0){
+    console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
+    console.log(checkheart.innerHTML)
+    checkheart.innerText="Not Products Favorite Found Yet !!! <br>";
+  }
+}, 1000);
+// ========================================================================================================================
