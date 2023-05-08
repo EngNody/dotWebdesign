@@ -86,6 +86,12 @@ const showsearch=document.querySelector(".site");
 
 oursearch.addEventListener("click",() => {
   showsearch.classList.toggle("xxx");
+
+  if (favmob.classList.contains="showfavmob") {
+    favmob.classList.remove("showfavmob")
+    wishlist.classList.remove("myheart")
+
+  }
 })
 
 tclose.addEventListener("click",() => {
@@ -178,12 +184,23 @@ stocks[x].querySelector(".available").style.width = percent + `%`
 
 const divtoshow=".mini-cart";
 const divpopup=document.querySelector(divtoshow);
+// const divpopup=document.querySelector(".mini-cart");
 const divtrigger=document.querySelector(".cart-trigger");
+const itemnumbercart=document.querySelector(".cart-trigger .fly-item")
+console.log(itemnumbercart)
 
 divtrigger.addEventListener('click',(e) => {
   setTimeout(() => {
     if(!divpopup.classList.contains('show')) {
       divpopup.classList.add("show")
+    // divpopup.classList.toggle("show")
+
+
+
+    wishlist.classList.remove("myheart");
+    showsearch.classList.remove("xxx");
+    favmob.classList.remove("showfavmob");
+    itemnumbercart.classList.add("dn");
     }
   }, 250);
     e.preventDefault();
@@ -192,42 +209,44 @@ divtrigger.addEventListener('click',(e) => {
 // -------------- auto close by click outside .cart-trigger --------------
 
 document.addEventListener("click",(e) => {
+//   const divtoshow=".mini-cart";
+// const divpopup=document.querySelector(divtoshow);
+
   const isclosest=e.target.closest(divtoshow);
   if (!isclosest && divpopup.classList.contains('show')) {
     divpopup.classList.remove("show");
+    itemnumbercart.classList.remove("dn");
 
   }
 })
 
 
-// ==========================================================================
+// ==================================+========================================
 // my red heart
 //===========================================================================
-
 const wishlist=document.querySelector(".wishlist")
 
 wishlist.addEventListener("click",(eo) => {
+  const favmob=document.querySelector(".favmob")
 eo.preventDefault()
 wishlist.classList.toggle("myheart")
 })
 
-const showlist=document.querySelector(".favmob")
-const minicartheart=document.querySelector(".minicartheart")
+// ========================================================================================================================
+//===== show mobile heart list when click on showlist 
+// ============================================================
+const favmob=document.querySelector(".favmob")
+const showlist=document.querySelector(".showlist")
+const wishlista=document.querySelector("#wishlista")
 
-// setInterval(() => {
-  // showlist.innerHTML = minicartheart.innerHTML;
+wishlista.addEventListener("click",(eo) => {
+  
+favmob.classList.toggle("showfavmob");
 
-// }, 100);
-showlist.addEventListener("click",(eo) => {
-
+if (showsearch.classList.contains="xxx") {
+  showsearch.classList.remove("xxx")
+}
 })
-
-
-
-
-
-
-
 
 
 // ===============================================================
@@ -278,7 +297,21 @@ disablebuy.removeAttribute("disabled")
   eo.preventDefault()
 // });
 // ********************* delete product from mini cart ************************************
-eo.target.parentElement.parentElement.remove()
+// eo.target.parentElement.parentElement.remove()
+
+
+// divtrigger.addEventListener('click',(e) => {
+  eo.target.parentElement.parentElement.remove();
+
+  setTimeout(() => {
+    if(!divpopup.classList.contains('show')) {
+      divpopup.classList.add("show")
+    }
+  }, 1);
+
+  
+// })
+
   // ****************************************************
 // if (eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.contains("show")) {
 //   console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbb")
@@ -689,13 +722,7 @@ itemimgcartfavweb.forEach(item => {
 });
 }, 1000);
 
-// ========================================================================================================================
-
-
-
-
-
-
+// ==================================================================================
 
 
 
