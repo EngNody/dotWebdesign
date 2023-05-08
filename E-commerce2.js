@@ -299,8 +299,6 @@ disablebuy.removeAttribute("disabled")
 // ********************* delete product from mini cart ************************************
 // eo.target.parentElement.parentElement.remove()
 
-
-// divtrigger.addEventListener('click',(e) => {
   eo.target.parentElement.parentElement.remove();
 
   setTimeout(() => {
@@ -310,8 +308,6 @@ disablebuy.removeAttribute("disabled")
   }, 1);
 
   
-// })
-
   // ****************************************************
 // if (eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.contains("show")) {
 //   console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbb")
