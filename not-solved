@@ -1,11 +1,82 @@
-// ====================== why the inner html for checkheart removed !!!!!!!!!!!!!!!!!
+// =======================================================================
+// plus and minus buttons
+// =======================================================================
+
+
+// setInterval(() => {
+//   const thecartproducts=document.querySelector(".thecartproducts")
+// console.log(thecartproducts)
+const minus=document.querySelectorAll(".minus");    
+console.log(minus)
+const plus=document.querySelectorAll(".plus");    
+console.log(plus)
+// const suminput=thecartproducts.querySelectorAll(".oneitem input");    
+// console.log(suminput)
+
+plus.forEach(item => {
+  item.addEventListener("click",(eo) => {
+  eo.preventDefault();
+
 setInterval(() => {
-  const checkheartitems=document.querySelectorAll(".contentheart .item");
-  console.log(checkheartitems.length)
-  if (checkheartitems.length == 0){
-    console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
-    console.log(checkheart.innerHTML)
-    checkheart.innerText="Not Products Favorite Found Yet !!! <br>";
-  }
-}, 1000);
-// ========================================================================================================================
+  let allsumplus=Number(eo.target.parentElement.querySelector("input").value);
+  console.log(allsumplus)
+  // eo.target.parentElement.querySelector("input").value= (allsumplus+1)
+  console.log(allsumplus+1)
+}, 2000);
+
+    })
+  });
+
+
+// minus.forEach(item => {
+//   item.addEventListener("click",(eo) => {
+// eo.preventDefault();
+// let allsum=Number(eo.target.parentElement.querySelector("input").value);
+// console.log(allsum)
+// // allsum = (allsum-1);
+// // if (eo.target.parentElement.querySelector("input").value >1) {
+//   eo.target.parentElement.querySelector("input").value= (allsum-1)
+//   // allsum = (allsum-1)
+// // allsum--
+// // }
+//   })
+// });
+// }, 4000);
+
+// ===============================================================================================================================
+// setInterval(() => {
+//   const minus=document.querySelectorAll(".minus");    
+// console.log(minus)
+// const plus=document.querySelectorAll(".plus");    
+// console.log(plus)
+// // const suminput=thecartproducts.querySelectorAll(".oneitem input");    
+// // // console.log(suminput)
+
+
+
+// plus.forEach(item => {
+//   item.addEventListener("click",(eo) => {
+// eo.preventDefault();
+// let allsumplus=Number(eo.target.parentElement.querySelector("input").value);
+// console.log(allsumplus)
+// // eo.target.parentElement.querySelector("input").value= (allsumplus+1)
+// console.log(allsumplus = allsumplus+1)
+
+// })
+
+// });
+// }, 1000);
+
+
+
+// minus.forEach(item => {
+//   item.addEventListener("click",(eo) => {
+// // (eo.target.parentElement.querySelector("input").value)
+// eo.preventDefault();
+// const allsum=(eo.target.parentElement.querySelector("input").value)-1;
+// // console.log(allsum)
+//    eo.target.parentElement.querySelector("input").value =allsum
+
+//   })
+// });
+
