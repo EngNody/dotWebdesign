@@ -187,7 +187,6 @@ function copymenu() {
   // const divpopup=document.querySelector(".mini-cart");
   const divtrigger=document.querySelector(".cart-trigger");
   const itemnumbercart=document.querySelector(".cart-trigger .fly-item")
-  console.log(itemnumbercart)
   
   divtrigger.addEventListener('click',(e) => {
     setTimeout(() => {
@@ -277,27 +276,19 @@ function copymenu() {
     }
       })
   // **************** delete disabled when close product from mini cart ***************************************
-  const imgsrc=eo.target.parentElement.parentElement.querySelector(".object-cover a img").src
-  console.log(imgsrc)
-  const allimg=document.querySelectorAll(".keybuy img")
-  console.log(allimg)
+  const imgsrc=eo.target.parentElement.parentElement.querySelector(".object-cover a img").src;
+  const allimg=document.querySelectorAll(".keybuy img");
   
   allimg.forEach(item => {
     const allimgsrc=item.src;
-    console.log(allimgsrc)
   
   if (imgsrc == allimgsrc) {
   const imgbuy=item.parentElement.parentElement.parentElement.parentElement
-  console.log(imgbuy)
   const disablebuy=imgbuy.querySelector(".newbutton")
-  console.log(disablebuy)
   disablebuy.removeAttribute("disabled")
   }
     })
     eo.preventDefault()
-  // });
-  // ********************* delete product from mini cart ************************************
-  // eo.target.parentElement.parentElement.remove()
   
   
   // divtrigger.addEventListener('click',(e) => {
@@ -307,16 +298,7 @@ function copymenu() {
       if(!divpopup.classList.contains('show')) {
         divpopup.classList.add("show")
       }
-    }, 1);
-  // })
-  
-    // ****************************************************
-  // if (eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.contains("show")) {
-  //   console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbb")
-  //   // eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.add("show")
-  //   minicart.classList.add("show")
-  // }
-  
+    }, 1);  
       }
     })
   // =================== in cart page only=============================================
@@ -329,26 +311,21 @@ function copymenu() {
   // =========================================
   // let theprice=eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","");
     let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
-  console.log(theprice)
   
   thetotal.forEach(item => {
-    // let sum=item.innerHTML.replace("$","");
           let sum=Number(item.innerHTML.replace("$",""));
   
     sum=Number(sum);
   if (sum>0) {
-  // let resum= ( Number(sum) - Number(theprice)).toFixed(2)
     let resum= (sum - theprice).toFixed(2)
   item.innerHTML =  `$ ${resum}`;
   }
   })
   // =========================================
+    // ********************* delete product from mini cart ************************************
       eo.target.parentElement.parentElement.parentElement.remove()
     })
   });
-  
-  
-  
   
   
   // ================================================================
@@ -357,7 +334,6 @@ function copymenu() {
   
   
   const totaljs=document.querySelectorAll(".totaljs")
-  // console.log(totaljs)
   
   
   totaljs.forEach(item => {
@@ -372,31 +348,6 @@ function copymenu() {
       }
     }, 100);  
   });
-  
-  
-  
-  
-  // ================== Not Products found Yet !!! <br> =====================================
-  // setInterval(() => {
-  //   const thecartproducts=document.querySelector(".thecartproducts")
-  //   console.log(thecartproducts)
-  //   const itemscart=document.querySelectorAll(".oneitem")
-  // console.log(itemscart.length)
-  
-  // if (itemscart.lengtht == 0) {
-  //   console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
-  //   thecartproducts.innerHTML=`<tr><td><h1>Not Products found Yet !!! <br></h1></td></tr>`
-  // }
-  
-  // }, 1000);
-  // setInterval(() => {
-  //   const thecartproducts=document.querySelector(".thecartproducts")
-  //   const oneitem=document.querySelectorAll(".oneitem")
-  
-  //   if (oneitem.length==0) {
-  //     thecartproducts.innerHTML=`<tr><td> Not Products found Yet !!! <tr><td> <br> <br>`;
-  //   }
-  // }, 100);
   
   // =====================================================================  
   // calc the total
@@ -456,7 +407,6 @@ function copymenu() {
   // =======================================================================
   
   const thecartproducts=document.querySelector(".thecartproducts")
-      console.log(thecartproducts.innerHTML)
       const nameitem=eo.target.parentElement.parentElement.parentElement.querySelector("h3 a").innerHTML;
       const srcitem=eo.target.parentElement.parentElement.parentElement.querySelector("img").src;    
       const priceitem=eo.target.parentElement.querySelector(".current").innerHTML;    
@@ -531,15 +481,11 @@ function copymenu() {
     item.remove()
   }
   });
-  
+
   // for remove the element
       eo.target.parentElement.parentElement.parentElement.remove();
     })
   });
-  
-    // ====================================================================
-  
-  
   // =======================================================================
   // plus and minus buttons
   // =======================================================================
@@ -582,42 +528,21 @@ function copymenu() {
     })
   });
   
+  // ==================================================================================================================
+  // =================  the total different between cart page and other pages =========================================
+  // ==================================================================================================================
+      thetotal.forEach(item => {
+        // ====================== All pages =============================
+        let theprice=Number(eo.target.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
+        console.log(theprice)
+        let sum=Number(item.innerHTML.replace("$",""));
+        console.log(sum)
+        let resum=(sum + theprice).toFixed(2)
+        console.log(resum)
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    // ====================================================================
-      // thetotal.forEach(item => {
-      //   // ====================== All pages =============================
-      //   let theprice=Number(eo.target.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
-      //   console.log(theprice)
-      //   let sum=Number(item.innerHTML.replace("$",""));
-      //   console.log(sum)
-      //   let resum=(sum + theprice).toFixed(2)
-  
-      //   resum=Number(resum)
+        resum=Number(resum)
       
-      // item.innerHTML =  `$ ${resum}`;
-  
-  
+      item.innerHTML =  `$ ${resum}`;
   //     // ======================== cart page only ===================================
   // let ourqty=Number(eo.target.parentElement.parentElement.querySelector(".qty-control input").value);
   //     const oursubtotal=(resum*ourqty)
@@ -628,7 +553,7 @@ function copymenu() {
   //     item.innerHTML =`$ ${oursubtotal}`;
   
   // =======================================================================
-  // })
+  })
   })
       });
   
@@ -653,7 +578,6 @@ function copymenu() {
   const summaryreview=document.querySelector(".summaryreview")
   const textareareview=document.querySelector(".textareareview")
   const reviewblockbody=document.querySelector(".review-block-body")
-  // console.log(ratethis.innerHTML)
   const newreview=document.querySelector("#newreview");
   
   
@@ -662,13 +586,9 @@ function copymenu() {
   //   eo.preventDefault()
   
   //   let d=new Date()
-  //   // console.log(d)
   //   let time=d.getDate()
-  //   console.log(time)
   //   let month=d.getMonth()
-  //   console.log(month)
   //   let year=d.getFullYear()
-  //   console.log(year)
   
   // const creatnewreview=`
   // <li class="item">
@@ -706,7 +626,6 @@ function copymenu() {
   const favnumber=document.querySelectorAll(".item-number-heart");
   const favnumbermob=document.querySelectorAll(".item-number-heart-mob");
   const checkheart=document.querySelectorAll(".contentheart")
-  // console.log(checkheart)
   const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
   
   
@@ -828,11 +747,9 @@ function copymenu() {
   // ================================= remove mob item when click web item
   // ================================= remove mob item minicart when click web item minicart
   const itemimgcartfavmob=document.querySelectorAll(".favmob .item img");
-  // console.log(itemimgcartfavmob)
   
   itemimgcartfavmob.forEach(item => {
     const ouritemsrcmob=item.src;
-    // console.log(ouritemsrcmob)
   
     if (itemimgcartfav == ouritemsrcmob) {
     item.parentElement.parentElement.parentElement.remove();
@@ -844,11 +761,9 @@ function copymenu() {
   // // // ================================= remove web item minicart when click mob item minicart
   
   const itemimgcartfavweb=document.querySelectorAll(".minicartheart .item img");
-  // console.log(itemimgcartfavweb)
   
   itemimgcartfavweb.forEach(item => {
     const ouritemsrcweb=item.src;
-    // console.log(ouritemsrcweb)
   
     if ( itemimgcartfav == ouritemsrcweb) {
     item.parentElement.parentElement.parentElement.remove();
@@ -895,7 +810,6 @@ function copymenu() {
   // =============================================================
   
   // const submenu=document.querySelectorAll('.has-child .icon-small')
-  // console.log(submenu)
   // // submenu.forEach((menu) => menu.addEventListener('click',toggle));
   // submenu.forEach(item => {
   
