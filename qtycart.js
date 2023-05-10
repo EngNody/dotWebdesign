@@ -5,26 +5,26 @@
 // copy menu for mobile
 // ===================================================
 
-function copymenu() {
+// function copymenu() {
   
-  // copy inside .dpt-cat to .departments
-  const dptCategory=document.querySelector('.dpt-cat')
-  const dptPlace=document.querySelector('.departments')
-  dptPlace.innerHTML = dptCategory.innerHTML;
+//   // copy inside .dpt-cat to .departments
+//   const dptCategory=document.querySelector('.dpt-cat')
+//   const dptPlace=document.querySelector('.departments')
+//   dptPlace.innerHTML = dptCategory.innerHTML;
   
-  // copy inside nav to nav
-  const mainNav=document.querySelector('.header-nav nav')
-  const navPlace=document.querySelector('.off-canvas nav')
-  navPlace.innerHTML = mainNav.innerHTML;
+//   // copy inside nav to nav
+//   const mainNav=document.querySelector('.header-nav nav')
+//   const navPlace=document.querySelector('.off-canvas nav')
+//   navPlace.innerHTML = mainNav.innerHTML;
   
-   // copy .header-top to .thetop-nav
-  const topNav=document.querySelector('.header-top .wrapper')
-  const topPlace=document.querySelector('.thetop-nav')
-  topPlace.innerHTML = topNav.innerHTML;
+//    // copy .header-top to .thetop-nav
+//   const topNav=document.querySelector('.header-top .wrapper')
+//   const topPlace=document.querySelector('.thetop-nav')
+//   topPlace.innerHTML = topNav.innerHTML;
   
-  }
+//   }
   
-  copymenu()
+//   copymenu()
   
   // ===========================================================
   // show mobile menu

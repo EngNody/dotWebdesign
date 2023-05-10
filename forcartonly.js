@@ -181,10 +181,10 @@ function copymenu() {
   // ====================================================================
   // show cart on click
   // ====================================================================
-  
+  // ====================== way 1 ===============================
+
   const divtoshow=".mini-cart";
   const divpopup=document.querySelector(divtoshow);
-  // const divpopup=document.querySelector(".mini-cart");
   const divtrigger=document.querySelector(".cart-trigger");
   const itemnumbercart=document.querySelector(".cart-trigger .fly-item")
   
@@ -192,10 +192,7 @@ function copymenu() {
     setTimeout(() => {
       if(!divpopup.classList.contains('show')) {
         divpopup.classList.add("show")
-      // divpopup.classList.toggle("show")
-  
-  
-  
+  // ********************************************   
       wishlist.classList.remove("myheart");
       showsearch.classList.remove("xxx");
       favmob.classList.remove("showfavmob");
@@ -204,12 +201,9 @@ function copymenu() {
     }, 250);
       e.preventDefault();
   })
-  
   // -------------- auto close by click outside .cart-trigger --------------
   
   document.addEventListener("click",(e) => {
-  //   const divtoshow=".mini-cart";
-  // const divpopup=document.querySelector(divtoshow);
   
     const isclosest=e.target.closest(divtoshow);
     if (!isclosest && divpopup.classList.contains('show')) {
@@ -218,7 +212,34 @@ function copymenu() {
   
     }
   })
+
+    // ========================= way 2 =====================================
+
+  //     const divpopup=document.querySelector(".mini-cart");
+  // const divtrigger=document.querySelector(".cart-trigger");
+  // const itemnumbercart=document.querySelector(".cart-trigger .fly-item")
+
+  // divtrigger.addEventListener('click',(e) => {
+
+  //     divpopup.classList.toggle("show")
+  // // ****************************************
+  //     wishlist.classList.remove("myheart");
+  //     showsearch.classList.remove("xxx");
+  //     favmob.classList.remove("showfavmob");
+  //     itemnumbercart.classList.add("dn");
+  // })
+  //!!!!!!!!!!!! -------------- auto close by click outside .cart-trigger --------------
+
+  // document.addEventListener("click",(e) => {
+    // const divtoshow=".mini-cart";
+  // const divpopup=document.querySelector(divtoshow);
   
+    // if (divpopup.classList.contains('show')) {
+      // divpopup.classList.toggle("show");
+  
+    // }
+  // })
+
   
   // ==================================+========================================
   // my red heart
@@ -254,9 +275,10 @@ function copymenu() {
   
   // const closeminicart=document.querySelectorAll(".hide-class .closeminicart")
   const minicart=document.querySelector(".mini-cart")
-  const closeminicart=document.querySelectorAll(".mini-cart .closeminicart")
-  const theminicart=document.querySelector(".mini-cart")
-  const ricloseelement=document.querySelectorAll(".ricloseelement")
+  console.log(minicart)
+
+  // const theminicart=document.querySelector(".mini-cart")
+
   
   
   // minicart.forEach(item => {
@@ -304,28 +326,72 @@ function copymenu() {
   // =================== in cart page only=============================================
   // ===================delete product from list=======================================
   // ==================================================================================
-  ricloseelement.forEach(item => {
+
+// const ricloseelement=document.querySelectorAll(".mini-cart .closeminicart")
+// console.log(ricloseelement)
+
+setInterval(() => {
+  const closeminicart=document.querySelectorAll(".mini-cart .closeminicart")
+  console.log(closeminicart)
+
+closeminicart.forEach(item => {
     item.addEventListener("click",(eo) => {
       // eo.preventDefault();
-      
-  // =========================================
+// console.log(item.parentElement.querySelector("img").src)
+const srcclickeditem=item.parentElement.querySelector("img").src
+  // ========================= calc total ========================
   // let theprice=eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","");
-    let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
+  //   let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
   
-  thetotal.forEach(item => {
-          let sum=Number(item.innerHTML.replace("$",""));
+  // thetotal.forEach(item => {
+  //         let sum=Number(item.innerHTML.replace("$",""));
   
-    sum=Number(sum);
-  if (sum>0) {
-    let resum= (sum - theprice).toFixed(2)
-  item.innerHTML =  `$ ${resum}`;
-  }
-  })
+  //   sum=Number(sum);
+  // if (sum>0) {
+  //   let resum= (sum - theprice).toFixed(2)
+  // item.innerHTML =  `$ ${resum}`;
+  // }
+  // })
+
+  //       // ===================delete the same element from     ========================
+  
+const allitemoneitem=document.querySelectorAll(".thecartproducts .oneitem");    
+console.log(allitemoneitem)
+
+
+allitemoneitem.forEach(item => {
+      let srcminicart=item.querySelector("img").src;
+      console.log(item)
+  console.log(srcminicart)
+
+if (srcminicart==srcclickeditem) {
+  item.remove()
+}
+
+setInterval(() => {
+  console.log(item.parentElement)
+}, 1000);
+// const calccartbody=document.querySelector(".cart-body ul")
+// console.log(calccartbody)
+// const items=document.querySelectorAll(".cart-body ul .item")
+// console.log(items.length)
+
+// // item.innerHTML=items.length;
+// items.forEach(mItem => {
+//   if ((items.length)== "1") {
+//     calccartbody.innerHTML=`Not Products found Yet !!! <br> <br>`;
+//   }
+// });
+
+
+});
   // =========================================
     // ********************* delete product from mini cart ************************************
-      eo.target.parentElement.parentElement.parentElement.remove()
+      // eo.target.parentElement.parentElement.parentElement.remove()
     })
   });
+}, 1000);
+
   
   
   // ================================================================
@@ -407,126 +473,144 @@ function copymenu() {
   // =======================================================================
   
   const thecartproducts=document.querySelector(".thecartproducts")
-  //     const nameitem=eo.target.parentElement.parentElement.parentElement.querySelector("h3 a").innerHTML;
-  //     const srcitem=eo.target.parentElement.parentElement.parentElement.querySelector("img").src;    
-  //     const priceitem=eo.target.parentElement.querySelector(".current").innerHTML;    
+      const nameitem=eo.target.parentElement.parentElement.parentElement.querySelector("h3 a").innerHTML;
+      const srcitem=eo.target.parentElement.parentElement.parentElement.querySelector("img").src;    
+      const priceitem=eo.target.parentElement.querySelector(".current").innerHTML;    
   
   
-  // const itemborn=`
-  // <tr class="oneitem">
-  // <td class="flexitem">
-  //   <div class="thumbnail object-cover">
-  //     <a href=""><img src="${srcitem}" alt=""></a>
-  //   </div>
-  //   <div class="content">
-  //     <strong><a href="#"><h3>${nameitem}</h3></a></strong>
-  //     <p>color:white</p>
-  //   </div>
-  // </td>
-  // <td><span class="current">${priceitem}</span></td>
+  const itemborn=`
+  <tr class="oneitem">
+  <td class="flexitem">
+    <div class="thumbnail object-cover">
+      <a href=""><img src="${srcitem}" alt=""></a>
+    </div>
+    <div class="content">
+      <strong><a href="#"><h3>${nameitem}</h3></a></strong>
+      <p>color:white</p>
+    </div>
+  </td>
+  <td><span class="current">${priceitem}</span></td>
   
-  // <td>
-  //   <div class="qty-control flexitem">
-  //     <button class="minus">-</button>
-  //     <input type="text" value="1" min="1" class="suminput">
-  //     <button class="plus">+</button>
-  //   </div>
-  // </td>
+  <td>
+    <div class="qty-control flexitem">
+      <button class="minus">-</button>
+      <input type="text" value="1" min="1" class="suminput">
+      <button class="plus">+</button>
+    </div>
+  </td>
   
-  // <td><span class="finaltotal">${priceitem}</span></td>
+  <td><span class="finaltotal">${priceitem}</span></td>
   
-  // <td><a href="#"><i class="ri-close-line ricloseelement"></i></a></td>
-  // </tr>
-  // `;
+  <td><a href="#"><i class="ri-close-line ricloseelement"></i></a></td>
+  </tr>
+  `;
   
-  // if (thecartproducts.innerHTML=="<tr><td><h3>Not Products found Yet !!! <br> </h3></td></tr>") {
-  //   thecartproducts.innerHTML = itemborn;
+  if (thecartproducts.innerHTML=="<tr><td><h3>Not Products found Yet !!! <br> </h3></td></tr>") {
+    thecartproducts.innerHTML = itemborn;
   
-  // }else{
-  //   thecartproducts.innerHTML+=itemborn;
-  // }
+  }else{
+    thecartproducts.innerHTML+=itemborn;
+  }
   
   // =======================================================================
   // closee button 
   // =======================================================================
   
-  //   const ricloseelementcreated=thecartproducts.querySelectorAll(".oneitem .ricloseelement")
+    const ricloseelementcreated=thecartproducts.querySelectorAll(".oneitem .ricloseelement")
   
-  // ricloseelementcreated.forEach(item => {
-  //   item.addEventListener("click",(eo) => {
-  //     eo.preventDefault();
-  //     let srcclickeditem=eo.target.parentElement.parentElement.parentElement.querySelector("img").src;
-  // // for remove disable from buy
-  //   const allcartssrc=document.querySelectorAll(".trending img");    
-  // allcartssrc.forEach(item => {
-  //   const allcartssrcsss= item.src ;
-  // if (allcartssrcsss==srcclickeditem){
-  //   item.parentElement.parentElement.parentElement.parentElement.querySelector(".newbutton").removeAttribute("disabled");
-  // }
-  //   setTimeout(() => {
-  //   const thecartproducts=document.querySelector(".thecartproducts")
-  //   const oneitem=document.querySelectorAll(".oneitem")
+  ricloseelementcreated.forEach(item => {
+    item.addEventListener("click",(eo) => {
+      eo.preventDefault();
+      let srcclickeditem=eo.target.parentElement.parentElement.parentElement.querySelector("img").src;
+  // for remove disable from buy
+    const allcartssrc=document.querySelectorAll(".trending img");    
+  allcartssrc.forEach(item => {
+    const allcartssrcsss= item.src ;
+  if (allcartssrcsss==srcclickeditem){
+    item.parentElement.parentElement.parentElement.parentElement.querySelector(".newbutton").removeAttribute("disabled");
+  }
+    setTimeout(() => {
+    const thecartproducts=document.querySelector(".thecartproducts")
+    const oneitem=document.querySelectorAll(".oneitem")
   
-  //   if (oneitem.length==0) {
-  //     thecartproducts.innerHTML=`<tr><td><h3>Not Products found Yet !!! <br> </h3></td></tr>`;
-  //   }
-  // }, 100);
-  // });
-  // // for remove element from mini-cart 
-  // const allitemminicart=document.querySelectorAll(".mini-cart .item");    
-  // allitemminicart.forEach(item => {
-  //   let srcminicart=item.querySelector("img").src;
+    if (oneitem.length==0) {
+      thecartproducts.innerHTML=`<tr><td><h3>Not Products found Yet !!! <br> </h3></td></tr>`;
+    }
+  }, 100);
+  });
+  // for remove element from mini-cart 
+  const allitemminicart=document.querySelectorAll(".mini-cart .item");    
+  allitemminicart.forEach(item => {
+    let srcminicart=item.querySelector("img").src;
+    console.log(srcminicart)
   
-  // if (srcminicart==srcclickeditem) {
-  //   item.remove()
-  // }
-  // });
+  if (srcminicart==srcclickeditem) {
+    item.remove()
+  }
+  });
 
-  // // for remove the element
-  //     eo.target.parentElement.parentElement.parentElement.remove();
-  //   })
-  // });
+
+// ==================== for remove card element item from card =================================================
+// setInterval(() => {
+//   const monicartelements=document.querySelectorAll(".mini-cart .item")
+// console.log(ricloseelement)
+
+// monicartelements.forEach(item => {
+//   console.log(item.querySelector("img"))
+//   // item.querySelector("img")
+// });
+
+// }, 1000);
+
+
+
+
+  // for remove the element
+  eo.target.parentElement.parentElement.parentElement.remove();
+
+    })
+  });
   // =======================================================================
   // plus and minus buttons
   // =======================================================================
-  // const plus=document.querySelectorAll(".plus")
-  // const minus=document.querySelectorAll(".minus")
+  const plus=document.querySelectorAll(".plus")
+  const minus=document.querySelectorAll(".minus")
   
-  // // ================ plus ============================
-  // plus.forEach(item => {
-  //   item.addEventListener("click",(eo) => {
-  //     eo.preventDefault();
-  // let inputplus= Number(eo.target.parentElement.querySelector(".qty-control input").value);
-  // let doplus=inputplus+1;
-  // eo.target.parentElement.querySelector(".qty-control input").value=doplus;
+  // ================ plus ============================
+  plus.forEach(item => {
+    item.addEventListener("click",(eo) => {
+      eo.preventDefault();
+  let inputplus= Number(eo.target.parentElement.querySelector(".qty-control input").value);
+  let doplus=inputplus+1;
+  eo.target.parentElement.querySelector(".qty-control input").value=doplus;
+  // ==================================================
+  let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","")).toFixed(2);
+  let ourqty=Number(eo.target.parentElement.parentElement.querySelector(".qty-control input").value);
+  let oursubtotal=(theprice*ourqty).toFixed(2);
+  let finaltotal=eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal")
+  
+  finaltotal.innerHTML=`$${oursubtotal}`
+    })
+  });
+  
+  //============== minus ==============================
+  minus.forEach(item => {
+    item.addEventListener("click",(eo) => {
+      eo.preventDefault()
+  let inputminus=  Number(eo.target.parentElement.querySelector(".qty-control input").value);
+  let dominus=inputminus-1
+  if (inputminus>1) {
+    eo.target.parentElement.querySelector(".qty-control input").value=dominus
   // // ==================================================
-  // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","")).toFixed(2);
-  // let ourqty=Number(eo.target.parentElement.parentElement.querySelector(".qty-control input").value);
-  // let oursubtotal=(theprice*ourqty).toFixed(2);
-  // let finaltotal=eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal")
+  let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","")).toFixed(2);
+  let ourqty=Number(eo.target.parentElement.parentElement.querySelector(".qty-control input").value);
+  const oursubtotal=(theprice*ourqty).toFixed(2);
+  let finaltotal=eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal")
   
-  // finaltotal.innerHTML=`$${oursubtotal}`
-  //   })
-  // });
-  
-  // //============== minus ==============================
-  // minus.forEach(item => {
-  //   item.addEventListener("click",(eo) => {
-  //     eo.preventDefault()
-  // let inputminus=  Number(eo.target.parentElement.querySelector(".qty-control input").value);
-  // let dominus=inputminus-1
-  // if (inputminus>1) {
-  //   eo.target.parentElement.querySelector(".qty-control input").value=dominus
-  // // // ==================================================
-  // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","")).toFixed(2);
-  // let ourqty=Number(eo.target.parentElement.parentElement.querySelector(".qty-control input").value);
-  // const oursubtotal=(theprice*ourqty).toFixed(2);
-  // let finaltotal=eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal")
-  
-  // finaltotal.innerHTML=`$${oursubtotal}`
-  // }
-  //   })
-  // });
+  finaltotal.innerHTML=`$${oursubtotal}`
+  }
+    })
+  });
   
   // ==================================================================================================================
   // =================  the total different between cart page and other pages =========================================
@@ -534,16 +618,13 @@ function copymenu() {
       thetotal.forEach(item => {
         // ====================== All pages =============================
         let theprice=Number(eo.target.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
-        console.log(theprice)
         let sum=Number(item.innerHTML.replace("$",""));
-        console.log(sum)
         let resum=(sum + theprice).toFixed(2)
-        console.log(resum)
   
         resum=Number(resum)
       
       item.innerHTML =  `$ ${resum}`;
-  //     // ======================== cart page only ===================================
+  //     // ======================== cart page only !!!!!!!!!!! false !!!!!!!!!!!!!!!!!!! ===================================
   // let ourqty=Number(eo.target.parentElement.parentElement.querySelector(".qty-control input").value);
   //     const oursubtotal=(resum*ourqty)
   //     // const oursubtotal2=Math.round(oursubtotal)
