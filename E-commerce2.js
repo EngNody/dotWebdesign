@@ -293,12 +293,12 @@ function copymenu() {
   
   // divtrigger.addEventListener('click',(e) => {
     eo.target.parentElement.parentElement.remove();
-  
-    setTimeout(() => {
-      if(!divpopup.classList.contains('show')) {
-        divpopup.classList.add("show")
-      }
-    }, 1);  
+  // ============= for show mob mini cart when press close item ====================
+    // setTimeout(() => {
+    //   if(divpopup.classList.contains('show')) {
+    //     divpopup.classList.add("show")
+    //   }
+    // }, 1);  
       }
     })
   // =================== in cart page only=============================================
@@ -306,7 +306,7 @@ function copymenu() {
   // ==================================================================================
   ricloseelement.forEach(item => {
     item.addEventListener("click",(eo) => {
-      // eo.preventDefault();
+      eo.preventDefault();
       
   // =========================================
   // let theprice=eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","");
@@ -626,8 +626,8 @@ function copymenu() {
   const favnumber=document.querySelectorAll(".item-number-heart");
   const favnumbermob=document.querySelectorAll(".item-number-heart-mob");
   const checkheart=document.querySelectorAll(".contentheart")
-  const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
-  // const ourheart=document.querySelectorAll(".item .hoverable li .active")
+  // const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
+  const ourheart=document.querySelectorAll(".item .hoverable li.active")
   console.log(ourheart)
   
   // ================== chang number items ==========================================

@@ -3966,7 +3966,8 @@ transition: var(--trans-background-color);
 .primary-color{
   /* background-color: var(--primary-color); */
   background-color: rgb(255, 18, 66);
-    border:3px solid rgb(255, 18, 66);
+    /* border:3px solid rgb(255, 18, 66); */
+border: transparent;
   color: #fff;
   opacity: 1 !important;
   border-radius: var(--percent50);

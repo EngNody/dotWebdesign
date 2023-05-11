@@ -718,8 +718,9 @@ item.innerHTML =  `$ ${resum}`;
   const favnumber=document.querySelectorAll(".item-number-heart");
   const favnumbermob=document.querySelectorAll(".item-number-heart-mob");
   const checkheart=document.querySelectorAll(".contentheart")
-  const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
-  
+  // const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
+  const ourheart=document.querySelectorAll(".item .hoverable li.active")
+
   
   // ================== chang number items ==========================================
   // web-mode
