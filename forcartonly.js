@@ -332,67 +332,51 @@ function copymenu() {
 
 setInterval(() => {
   const closeminicart=document.querySelectorAll(".mini-cart .closeminicart")
-  console.log(closeminicart)
 
 closeminicart.forEach(item => {
     item.addEventListener("click",(eo) => {
-      // eo.preventDefault();
-// console.log(item.parentElement.querySelector("img").src)
+      eo.preventDefault();
 const srcclickeditem=item.parentElement.querySelector("img").src
-  // ========================= calc total ========================
+{  // ========================= calc total ========================
   // let theprice=eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","");
-  //   let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
+    // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
   
   // thetotal.forEach(item => {
   //         let sum=Number(item.innerHTML.replace("$",""));
-  
   //   sum=Number(sum);
   // if (sum>0) {
   //   let resum= (sum - theprice).toFixed(2)
   // item.innerHTML =  `$ ${resum}`;
   // }
   // })
-
-  //       // ===================delete the same element from     ========================
+  //   
+  }
+// ====================== Not Products found Yet !!! ===================================
+  const allitemoneitem=document.querySelectorAll(".thecartproducts .oneitem");    
+  const thecartproducts=document.querySelector(".thecartproducts");    
   
-const allitemoneitem=document.querySelectorAll(".thecartproducts .oneitem");    
-console.log(allitemoneitem)
-
+  if ((allitemoneitem.length) ==0) {
+    thecartproducts.innerHTML=`<tr><td><h3>Not Products found Yet !!! <br> </h3></td></tr>`;
+  }
+  // ===================delete the same element from     ========================
 
 allitemoneitem.forEach(item => {
+  // =================== close another element =========================
       let srcminicart=item.querySelector("img").src;
-      console.log(item)
-  console.log(srcminicart)
 
 if (srcminicart==srcclickeditem) {
   item.remove()
 }
 
-setInterval(() => {
-  console.log(item.parentElement)
-}, 1000);
-// const calccartbody=document.querySelector(".cart-body ul")
-// console.log(calccartbody)
-// const items=document.querySelectorAll(".cart-body ul .item")
-// console.log(items.length)
-
-// // item.innerHTML=items.length;
-// items.forEach(mItem => {
-//   if ((items.length)== "1") {
-//     calccartbody.innerHTML=`Not Products found Yet !!! <br> <br>`;
-//   }
-// });
-
-
 });
   // =========================================
-    // ********************* delete product from mini cart ************************************
+{    // ********************* delete product from mini cart ************************************
       // eo.target.parentElement.parentElement.parentElement.remove()
+  }
     })
   });
 }, 1000);
 
-  
   
   // ================================================================
   // component the cart
@@ -511,7 +495,8 @@ setInterval(() => {
   }else{
     thecartproducts.innerHTML+=itemborn;
   }
-  
+
+
   // =======================================================================
   // closee button 
   // =======================================================================
@@ -549,27 +534,26 @@ setInterval(() => {
   }
   });
 
+  // ================ for remove price deleted item from total price
+  thetotal.forEach(item => {
+    let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$","")).toFixed(2);
+    console.log(theprice)
+    let sum=Number(item.innerHTML.replace("$",""));
+    let resum=(sum - Number(theprice)).toFixed(2)
+    resum=Number(resum)
+  item.innerHTML =  `$ ${resum}`;
+      });
 
-// ==================== for remove card element item from card =================================================
-// setInterval(() => {
-//   const monicartelements=document.querySelectorAll(".mini-cart .item")
-// console.log(ricloseelement)
-
-// monicartelements.forEach(item => {
-//   console.log(item.querySelector("img"))
-//   // item.querySelector("img")
-// });
-
-// }, 1000);
-
-
-
-
-  // for remove the element
+  //=================== for remove the element ========================================
   eo.target.parentElement.parentElement.parentElement.remove();
 
     })
   });
+  
+
+
+
+
   // =======================================================================
   // plus and minus buttons
   // =======================================================================
@@ -585,11 +569,25 @@ setInterval(() => {
   eo.target.parentElement.querySelector(".qty-control input").value=doplus;
   // ==================================================
   let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","")).toFixed(2);
+  console.log(theprice)
   let ourqty=Number(eo.target.parentElement.parentElement.querySelector(".qty-control input").value);
+  console.log(ourqty)
   let oursubtotal=(theprice*ourqty).toFixed(2);
+  console.log(oursubtotal)
   let finaltotal=eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal")
-  
-  finaltotal.innerHTML=`$${oursubtotal}`
+  console.log(finaltotal)
+  console.log("hhhhhhhhhhhhhhhhhhhh")
+  // finaltotal.innerHTML=`$${oursubtotal}`
+  finaltotal.innerHTML=oursubtotal;
+
+// ================== change total when click plus ==========================
+thetotal.forEach(item => {
+  let sum=Number(item.innerHTML.replace("$",""));
+  let resum=(sum + Number(theprice)).toFixed(2)
+  resum=Number(resum)
+item.innerHTML =  `$ ${resum}`;
+    });
+
     })
   });
   
@@ -607,8 +605,20 @@ setInterval(() => {
   const oursubtotal=(theprice*ourqty).toFixed(2);
   let finaltotal=eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal")
   
-  finaltotal.innerHTML=`$${oursubtotal}`
+  finaltotal.innerHTML=`$${oursubtotal}`;
+
+    // ================== change total when click minus ==========================
+thetotal.forEach(item => {
+  let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","")).toFixed(2);
+  console.log(theprice)
+  let sum=Number(item.innerHTML.replace("$",""));
+  let resum=(sum - Number(theprice)).toFixed(2)
+  resum=Number(resum)
+item.innerHTML =  `$ ${resum}`;
+    });
   }
+
+
     })
   });
   
@@ -624,6 +634,7 @@ setInterval(() => {
         resum=Number(resum)
       
       item.innerHTML =  `$ ${resum}`;
+      
   //     // ======================== cart page only !!!!!!!!!!! false !!!!!!!!!!!!!!!!!!! ===================================
   // let ourqty=Number(eo.target.parentElement.parentElement.querySelector(".qty-control input").value);
   //     const oursubtotal=(resum*ourqty)

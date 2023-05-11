@@ -226,7 +226,7 @@ function copymenu() {
   const wishlist=document.querySelector(".wishlist")
   
   wishlist.addEventListener("click",(eo) => {
-    const favmob=document.querySelector(".favmob")
+    // const favmob=document.querySelector(".favmob")
   eo.preventDefault()
   wishlist.classList.toggle("myheart")
   })
@@ -239,7 +239,7 @@ function copymenu() {
   const wishlista=document.querySelector("#wishlista")
   
   wishlista.addEventListener("click",(eo) => {
-    
+    eo.preventDefault()
   favmob.classList.toggle("showfavmob");
   
   if (showsearch.classList.contains="xxx") {
@@ -627,7 +627,8 @@ function copymenu() {
   const favnumbermob=document.querySelectorAll(".item-number-heart-mob");
   const checkheart=document.querySelectorAll(".contentheart")
   const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
-  
+  // const ourheart=document.querySelectorAll(".item .hoverable li .active")
+  console.log(ourheart)
   
   // ================== chang number items ==========================================
   // web-mode
@@ -664,6 +665,7 @@ function copymenu() {
   eo.target.classList.toggle("primary-color")
   
     const nameitemminicart=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("h3").innerText;
+    console.log(nameitemminicart)
   const srcitemminicart=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("img").src;    
   const priceitemminicart=Number(eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));    
   
