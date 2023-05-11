@@ -310,75 +310,78 @@ function copymenu() {
   disablebuy.removeAttribute("disabled")
   }
     })
-    eo.preventDefault()
-  
-  
-  // divtrigger.addEventListener('click',(e) => {
-    eo.target.parentElement.parentElement.remove();
-  
-      // ============= for show mob mini cart when press close item ====================
 
-    // setTimeout(() => {
-    //   if(!divpopup.classList.contains('show')) {
-    //     divpopup.classList.add("show")
-    //   }
-    // }, 1);  
-      }
-    })
-  // =================== in cart page only=============================================
+    if (minicart.classList.contains("show")) {
+      // **************************************************************
+        eo.target.parentElement.parentElement.remove();
+        eo.preventDefault()
+      // ============= for show mob mini cart when press close item ====================
+      setTimeout(() => {
+          if(!divpopup.classList.contains('show')) {
+            divpopup.classList.add("show")
+          }
+        }, 1); 
+        // ********************************************************
+    }else{
+      eo.target.parentElement.parentElement.remove();
+    }
+          }
+        })
+      
+{  // =================== in cart page only=============================================
   // ===================delete product from list=======================================
   // ==================================================================================
 
 // const ricloseelement=document.querySelectorAll(".mini-cart .closeminicart")
 // console.log(ricloseelement)
 
-setInterval(() => {
-  const closeminicart=document.querySelectorAll(".mini-cart .closeminicart")
+// setInterval(() => {
+//   const closeminicart=document.querySelectorAll(".mini-cart .closeminicart")
 
-closeminicart.forEach(item => {
-    item.addEventListener("click",(eo) => {
-      eo.preventDefault();
-const srcclickeditem=item.parentElement.querySelector("img").src
-{  // ========================= calc total ========================
-  // let theprice=eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","");
-    // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
+// closeminicart.forEach(item => {
+//     item.addEventListener("click",(eo) => {
+//       eo.preventDefault();
+// const srcclickeditem=item.parentElement.querySelector("img").src
+// {  // ========================= calc total ========================
+//   // let theprice=eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","");
+//     // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
   
-  // thetotal.forEach(item => {
-  //         let sum=Number(item.innerHTML.replace("$",""));
-  //   sum=Number(sum);
-  // if (sum>0) {
-  //   let resum= (sum - theprice).toFixed(2)
-  // item.innerHTML =  `$ ${resum}`;
-  // }
-  // })
-  //   
-  }
-// ====================== Not Products found Yet !!! ===================================
-  const allitemoneitem=document.querySelectorAll(".thecartproducts .oneitem");    
-  const thecartproducts=document.querySelector(".thecartproducts");    
+//   // thetotal.forEach(item => {
+//   //         let sum=Number(item.innerHTML.replace("$",""));
+//   //   sum=Number(sum);
+//   // if (sum>0) {
+//   //   let resum= (sum - theprice).toFixed(2)
+//   // item.innerHTML =  `$ ${resum}`;
+//   // }
+//   // })
+//   //   
+//   }
+// // ====================== Not Products found Yet !!! ===================================
+//   const allitemoneitem=document.querySelectorAll(".thecartproducts .oneitem");    
+//   const thecartproducts=document.querySelector(".thecartproducts");    
   
-  if ((allitemoneitem.length) ==0) {
-    thecartproducts.innerHTML=`<tr><td><h3>Not Products found Yet !!! <br> </h3></td></tr>`;
-  }
+//   if ((allitemoneitem.length) ==0) {
+//     thecartproducts.innerHTML=`<tr><td><h3>Not Products found Yet !!! <br> </h3></td></tr>`;
+//   }
   // ===================delete the same element from     ========================
 
-allitemoneitem.forEach(item => {
-  // =================== close another element =========================
-      let srcminicart=item.querySelector("img").src;
+// allitemoneitem.forEach(item => {
+//   // =================== close another element =========================
+//       let srcminicart=item.querySelector("img").src;
 
-if (srcminicart==srcclickeditem) {
-  item.remove()
+// if (srcminicart==srcclickeditem) {
+//   item.remove()
+// }
+
+// });
+//   // =========================================
+// {    // ********************* delete product from mini cart ************************************
+//       // eo.target.parentElement.parentElement.parentElement.remove()
+//   }
+//     })
+//   });
+// }, 1000);
 }
-
-});
-  // =========================================
-{    // ********************* delete product from mini cart ************************************
-      // eo.target.parentElement.parentElement.parentElement.remove()
-  }
-    })
-  });
-}, 1000);
-
   
   // ================================================================
   // component the cart
