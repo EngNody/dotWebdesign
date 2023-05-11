@@ -190,19 +190,19 @@ function copymenu() {
   
   divtrigger.addEventListener('click',(e) => {
     setTimeout(() => {
+      e.preventDefault();
+
       if(!divpopup.classList.contains('show')) {
         divpopup.classList.add("show")
       // divpopup.classList.toggle("show")
-  
-  
-  
+  // ********************************************
       wishlist.classList.remove("myheart");
       showsearch.classList.remove("xxx");
       favmob.classList.remove("showfavmob");
       itemnumbercart.classList.add("dn");
       }
     }, 250);
-      e.preventDefault();
+      // e.preventDefault();
   })
   
   // -------------- auto close by click outside .cart-trigger --------------
@@ -288,44 +288,51 @@ function copymenu() {
   disablebuy.removeAttribute("disabled")
   }
     })
-    eo.preventDefault()
-  
-  
-  // divtrigger.addEventListener('click',(e) => {
+
+// **************************************************************
+
+if (minicart.classList.contains("show")) {
+  // **************************************************************
     eo.target.parentElement.parentElement.remove();
+    eo.preventDefault()
   // ============= for show mob mini cart when press close item ====================
-    // setTimeout(() => {
-    //   if(divpopup.classList.contains('show')) {
-    //     divpopup.classList.add("show")
-    //   }
-    // }, 1);  
+  setTimeout(() => {
+      if(!divpopup.classList.contains('show')) {
+        divpopup.classList.add("show")
+      }
+    }, 1); 
+    // ********************************************************
+}else{
+  eo.target.parentElement.parentElement.remove();
+}
       }
     })
-  // =================== in cart page only=============================================
+{  // =================== in cart page only=============================================
   // ===================delete product from list=======================================
-  // ==================================================================================
-  ricloseelement.forEach(item => {
-    item.addEventListener("click",(eo) => {
-      eo.preventDefault();
+  // // ==================================================================================
+  // ricloseelement.forEach(item => {
+  //   item.addEventListener("click",(eo) => {
+  //     eo.preventDefault();
       
-  // =========================================
-  // let theprice=eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","");
-    let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
+  // // =========================================
+  // // let theprice=eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","");
+  //   let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
   
-  thetotal.forEach(item => {
-          let sum=Number(item.innerHTML.replace("$",""));
+  // thetotal.forEach(item => {
+  //         let sum=Number(item.innerHTML.replace("$",""));
   
-    sum=Number(sum);
-  if (sum>0) {
-    let resum= (sum - theprice).toFixed(2)
-  item.innerHTML =  `$ ${resum}`;
-  }
-  })
-  // =========================================
-    // ********************* delete product from mini cart ************************************
-      eo.target.parentElement.parentElement.parentElement.remove()
-    })
-  });
+  //   sum=Number(sum);
+  // if (sum>0) {
+  //   let resum= (sum - theprice).toFixed(2)
+  // item.innerHTML =  `$ ${resum}`;
+  // }
+  // })
+  // // =========================================
+  //   // ********************* delete product from mini cart ************************************
+  //   // eo.target.parentElement.parentElement.parentElement.remove()
+  //   })
+  // });
+}
   
   
   // ================================================================

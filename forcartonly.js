@@ -316,11 +316,13 @@ function copymenu() {
   // divtrigger.addEventListener('click',(e) => {
     eo.target.parentElement.parentElement.remove();
   
-    setTimeout(() => {
-      if(!divpopup.classList.contains('show')) {
-        divpopup.classList.add("show")
-      }
-    }, 1);  
+      // ============= for show mob mini cart when press close item ====================
+
+    // setTimeout(() => {
+    //   if(!divpopup.classList.contains('show')) {
+    //     divpopup.classList.add("show")
+    //   }
+    // }, 1);  
       }
     })
   // =================== in cart page only=============================================
