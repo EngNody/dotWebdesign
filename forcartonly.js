@@ -310,9 +310,8 @@ function copymenu() {
   disablebuy.removeAttribute("disabled")
   }
     })
-
+// *******************************************************************
     if (minicart.classList.contains("show")) {
-      // **************************************************************
         eo.target.parentElement.parentElement.remove();
         eo.preventDefault()
       // ============= for show mob mini cart when press close item ====================
@@ -321,67 +320,151 @@ function copymenu() {
             divpopup.classList.add("show")
           }
         }, 1); 
-        // ********************************************************
     }else{
       eo.target.parentElement.parentElement.remove();
     }
+// ************************************************************************
           }
         })
       
-{  // =================== in cart page only=============================================
-  // ===================delete product from list=======================================
-  // ==================================================================================
+  // =================== in cart page only=============================================
+//   // ===================delete product from list=======================================
+//   // ==================================================================================
 
-// const ricloseelement=document.querySelectorAll(".mini-cart .closeminicart")
-// console.log(ricloseelement)
+const ricloseelement=document.querySelectorAll(".mini-cart .closeminicart")
+console.log(ricloseelement)
 
-// setInterval(() => {
-//   const closeminicart=document.querySelectorAll(".mini-cart .closeminicart")
+setInterval(() => {
+  const closeminicart=document.querySelectorAll(".mini-cart .closeminicart")
 
-// closeminicart.forEach(item => {
-//     item.addEventListener("click",(eo) => {
-//       eo.preventDefault();
-// const srcclickeditem=item.parentElement.querySelector("img").src
-// {  // ========================= calc total ========================
-//   // let theprice=eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","");
-//     // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
+closeminicart.forEach(item => {
+    item.addEventListener("click",(eo) => {
+      eo.preventDefault();
+const srcclickeditem=item.parentElement.querySelector("img").src
+  console.log(srcclickeditem)
+// {
+  // // ========================= calc total ========================
+  // // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
+  //   // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
+
+  //   console.log(theprice)
+
+  // thetotal.forEach(item => {
+  //         let sum=Number(item.innerHTML.replace("$",""));
+  //   sum=Number(sum);
+  // if (sum>0) {
+  //   let resum= (sum - theprice).toFixed(2)
+  // item.innerHTML =  `$ ${resum}`;
+  // }
+  // })
+  // ========================= calc total ========================
+  // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
+    // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
+    // let theprice=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+  // setInterval(() => {
+    
+  // }, intervalInms);
+    // let thepricefinallist=document.querySelectorAll(".finaltotal");
+    // console.log(thepricefinallist)
+
+// thepricefinallist.forEach(item => {
+
+// // console.log(item.parentElement.parentElement.querySelector("img").src)
+
+// const srconeitem=item.parentElement.parentElement.querySelector("img").src;
+
+// if (srcclickeditem==srconeitem) {
+// console.log(srconeitem)
+// console.log(srcclickeditem)
+// //  ============================= the value should deleted ====================================
+//   const finazloneitem=Number(item.parentElement.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
+//   console.log(finazloneitem)
+
+  // let theprice=Number(eo.target.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
+    // const thetotal=document.querySelectorAll(".thetotal")
+
+  // thetotal.forEach(item => {
+    // let sum=Number(item.innerHTML.replace("$",""));
+    // console.log(sum)
+
+// if (sum>0) {
+// let resum= Number(sum - finazloneitem);
+// console.log(resum)
+
+  // item.innerHTML = `${finazloneitem}`;
+
+// }
+  // })
+
+// ================= for each total ==========================
+  //     thetotal.forEach(item => {
+  //     console.log(item)
+  //         let sum=Number(item.innerHTML.replace("$",""));
+  //         console.log(sum)
+  //   // sum=Number(sum);
+  // if (sum>0) {
+  //   let resum=(sum - finazloneitem);
+  //   console.log(sum)
+  //   console.log(finazloneitem)
+  //   console.log(resum)
+
+  //     item.innerHTML=resum;
+  // }
+  // })
+
+
+// console.log(eo.target)
+  // let getinnerfinal=Number(item.innerHTML.replace("$",""));
+
+  //     thetotal.forEach(item => {
+  //     console.log(item)
+  //         let sum=Number(item.innerHTML.replace("$",""));
+  //   sum=Number(sum);
+  // if (sum>0) {
+  //   let resum=Number((sum - getinnerfinal));
+  //   console.log(sum)
+  //   console.log(getinnerfinal)
+  //   console.log(resum)
+  //   console.log(item)
+  //   console.log(item.innerHTML)
+  //   const hattheitem=Number(item.innerHTML.replace("$",""));
+  //        console.log(hattheitem)
+
+  //     item.innerHTML=resum;
+  // }
+  // })
+// }
+// });
+    // }
+// *****************************************************************
+
+// *****************************************************************
+// ====================== Not Products found Yet !!! ===================================
+  const allitemoneitem=document.querySelectorAll(".thecartproducts .oneitem");    
+  const thecartproducts=document.querySelector(".thecartproducts");    
   
-//   // thetotal.forEach(item => {
-//   //         let sum=Number(item.innerHTML.replace("$",""));
-//   //   sum=Number(sum);
-//   // if (sum>0) {
-//   //   let resum= (sum - theprice).toFixed(2)
-//   // item.innerHTML =  `$ ${resum}`;
-//   // }
-//   // })
-//   //   
-//   }
-// // ====================== Not Products found Yet !!! ===================================
-//   const allitemoneitem=document.querySelectorAll(".thecartproducts .oneitem");    
-//   const thecartproducts=document.querySelector(".thecartproducts");    
-  
-//   if ((allitemoneitem.length) ==0) {
-//     thecartproducts.innerHTML=`<tr><td><h3>Not Products found Yet !!! <br> </h3></td></tr>`;
-//   }
+  if ((allitemoneitem.length) ==0) {
+    thecartproducts.innerHTML=`<tr><td><h3>Not Products found Yet !!! <br> </h3></td></tr>`;
+  }
   // ===================delete the same element from     ========================
 
-// allitemoneitem.forEach(item => {
-//   // =================== close another element =========================
-//       let srcminicart=item.querySelector("img").src;
+allitemoneitem.forEach(item => {
+  // =================== close another element =========================
+      let srcminicart=item.querySelector("img").src;
 
-// if (srcminicart==srcclickeditem) {
-//   item.remove()
-// }
-
-// });
-//   // =========================================
-// {    // ********************* delete product from mini cart ************************************
-//       // eo.target.parentElement.parentElement.parentElement.remove()
-//   }
-//     })
-//   });
-// }, 1000);
+if (srcminicart==srcclickeditem) {
+  item.remove()
 }
+
+});
+  // =========================================
+    // ********************* delete product from mini cart ************************************
+      // eo.target.parentElement.parentElement.parentElement.remove()
+
+    })
+  });
+}, 1000);
+
   
   // ================================================================
   // component the cart
@@ -555,10 +638,6 @@ function copymenu() {
     })
   });
   
-
-
-
-
   // =======================================================================
   // plus and minus buttons
   // =======================================================================

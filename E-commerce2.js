@@ -634,7 +634,7 @@ if (minicart.classList.contains("show")) {
   const favnumbermob=document.querySelectorAll(".item-number-heart-mob");
   const checkheart=document.querySelectorAll(".contentheart")
   // const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
-  const ourheart=document.querySelectorAll(".item .hoverable li.active")
+  const ourheart=document.querySelectorAll(".item .hoverable li.active a i")
   console.log(ourheart)
   
   // ================== chang number items ==========================================
@@ -670,7 +670,8 @@ if (minicart.classList.contains("show")) {
   eo.preventDefault();
   
   eo.target.classList.toggle("primary-color")
-  
+  // eo.target.parentElement.classList.toggle("primary-color")
+
     const nameitemminicart=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("h3").innerText;
     console.log(nameitemminicart)
   const srcitemminicart=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("img").src;    

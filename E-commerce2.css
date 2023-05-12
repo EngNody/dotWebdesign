@@ -1384,20 +1384,28 @@ max-height: 373px;
 }
 
 .products .hoverable{
+  /* border: 2px solid blue; */
   position: absolute;
   top: 0;
   right: 0;
+  padding: 4px 0;
+}
+.products .item:hover .hoverable li{
+  /* border: 2px solid red; */
+  border-radius: 20px;
+transform: translateX(0);
+opacity: 1;
 }
 
 .products .hoverable li a{
-    /* border: 2px solid red; */
+    /* border: 2px solid rgb(0, 255, 4); */
     color: #000;
   display: flex;
 align-items: center;
 justify-content: center;
-width: 28px;
-height: 28px;
-padding:0.25em;
+width: 25px;
+height: 25px;
+padding:1em;
 margin: 0.25em;
 border-radius: var(--percent50);
 line-height: 1;
@@ -1405,6 +1413,7 @@ background-color: var(--white-color);
 opacity: 0.7;
 transition: var(--trans-background-color) ,opacity 0.3s;
 }
+
 .products .hoverable li a:hover{
 color: var(--white-color);
 background-color: var(--dark-color);
@@ -1421,15 +1430,13 @@ opacity: 1;
   transition: transform 0.3s, opacity 0.3s;
 }
 
-.products .item:hover .hoverable li{
-transform: translateX(0);
-opacity: 1;
-}
-
 .products .hoverable li:last-child{
   transition-delay:0.1s ;
 }
-
+.products .hoverable li a i{
+  /* border: 2px solid red; */
+  padding: 10px;
+}
 .products .discount{
   top: auto;
 right: 0;
@@ -3966,12 +3973,12 @@ transition: var(--trans-background-color);
 .primary-color{
   /* background-color: var(--primary-color); */
   background-color: rgb(255, 18, 66);
-    /* border:3px solid rgb(255, 18, 66); */
-border: transparent;
+    border:3px solid rgb(255, 18, 66);
+border: rgb(255, 18, 66);
   color: #fff;
   opacity: 1 !important;
   border-radius: var(--percent50);
-padding:0.27em;
+/* padding:0.27em; */
 transition: var(--trans-background-color) ,opacity 0.3s;
 
 }
