@@ -126,6 +126,7 @@ margin: 0 auto;
 .flexwrap{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 .flexcenter{
   display: flex;
@@ -3391,6 +3392,7 @@ z-index: 1000;
 box-shadow: rgb(0 0 0 / 30%) 0 10px 50px;
 border-radius: 10px;
 /* transition: all 0.1s; */
+overflow: hidden;
 visibility: hidden;
  opacity: 0; 
 }
@@ -3486,6 +3488,22 @@ top: -16px;
 background-color: var(--primary-color);
 font-size: var(--font-small);
 } */
+
+#theqtyminicart{
+  width: 30px;
+  height: 25px;
+  border-radius: 50%;
+  padding-left: 11px;
+  margin-left: 105px;
+  box-shadow: 0 0 20px -2px crimson;
+  border: none;
+}
+
+#thesumminicart{
+  border: 2px solid red;
+width: fit-content;
+opacity: 0;
+}
 .mini-cart .item-remove ,.contentheart .item .item-remove{
   /* border: 2px solid red; */
   position: relative;

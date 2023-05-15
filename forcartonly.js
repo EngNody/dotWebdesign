@@ -344,99 +344,61 @@ const srcclickeditem=item.parentElement.querySelector("img").src
   console.log(srcclickeditem)
 // {
   // // ========================= calc total ========================
-  // // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
-  //   // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
-
-  //   console.log(theprice)
-
-  // thetotal.forEach(item => {
-  //         let sum=Number(item.innerHTML.replace("$",""));
-  //   sum=Number(sum);
-  // if (sum>0) {
-  //   let resum= (sum - theprice).toFixed(2)
-  // item.innerHTML =  `$ ${resum}`;
-  // }
-  // })
-  // ========================= calc total ========================
-  // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
     // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
-    // let theprice=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
-  // setInterval(() => {
-    
-  // }, intervalInms);
-    // let thepricefinallist=document.querySelectorAll(".finaltotal");
-    // console.log(thepricefinallist)
+    // let theprice=Number(eo.target.parentElement.parentElement.querySelector("#thesumminicart").innerHTML);
 
-// thepricefinallist.forEach(item => {
+    // let theprice=Number(eo.target.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
+    // console.log(theprice)
+    // let theqty=Number(eo.target.parentElement.parentElement.querySelector("#theqtyminicart").value);
+//     console.log(theqty)
+//       const thecartproductsm=document.querySelectorAll(".thecartproducts img")
+//       console.log(thecartproductsm)
 
-// // console.log(item.parentElement.parentElement.querySelector("img").src)
+// // console.log(thecartproducts)
 
-// const srconeitem=item.parentElement.parentElement.querySelector("img").src;
+// thecartproductsm.forEach(item => {
+// const sss=item.src
+// console.log(sss)
 
-// if (srcclickeditem==srconeitem) {
-// console.log(srconeitem)
-// console.log(srcclickeditem)
-// //  ============================= the value should deleted ====================================
-//   const finazloneitem=Number(item.parentElement.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
-//   console.log(finazloneitem)
+  
+//   thetotal.forEach(item => {
+// console.log(item)
 
-  // let theprice=Number(eo.target.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
-    // const thetotal=document.querySelectorAll(".thetotal")
+// let sum=Number(item.innerHTML.replace("$",""));
+// sum=Number(sum);
+// console.log(sum)
 
-  // thetotal.forEach(item => {
-    // let sum=Number(item.innerHTML.replace("$",""));
-    // console.log(sum)
+//     if (srcclickeditem == sss) {
+//     console.log(sss)
+//     console.log(srcclickeditem)
 
-// if (sum>0) {
-// let resum= Number(sum - finazloneitem);
-// console.log(resum)
+//     const donesum=(theprice*theqty);
+//     console.log(donesum)
 
-  // item.innerHTML = `${finazloneitem}`;
+//       item.innerHTML=(sum - donesum).toFixed(2);
 
-// }
-  // })
+//     let sum=Number(item.innerHTML.replace("$",""));
+// sum=Number(sum);
+// console.log(sum)
+// // if (sum>0) {
+// let resum= (sum - theprice).toFixed(2)
+// item.innerHTML =  `$ ${resum}`;
+// // }
+    // }
+// })
 
-// ================= for each total ==========================
-  //     thetotal.forEach(item => {
-  //     console.log(item)
-  //         let sum=Number(item.innerHTML.replace("$",""));
-  //         console.log(sum)
-  //   // sum=Number(sum);
-  // if (sum>0) {
-  //   let resum=(sum - finazloneitem);
-  //   console.log(sum)
-  //   console.log(finazloneitem)
-  //   console.log(resum)
-
-  //     item.innerHTML=resum;
-  // }
-  // })
+// });
 
 
-// console.log(eo.target)
-  // let getinnerfinal=Number(item.innerHTML.replace("$",""));
-
-  //     thetotal.forEach(item => {
-  //     console.log(item)
-  //         let sum=Number(item.innerHTML.replace("$",""));
-  //   sum=Number(sum);
-  // if (sum>0) {
-  //   let resum=Number((sum - getinnerfinal));
-  //   console.log(sum)
-  //   console.log(getinnerfinal)
-  //   console.log(resum)
-  //   console.log(item)
-  //   console.log(item.innerHTML)
-  //   const hattheitem=Number(item.innerHTML.replace("$",""));
-  //        console.log(hattheitem)
-
-  //     item.innerHTML=resum;
-  // }
-  // })
 // }
 // });
     // }
 // *****************************************************************
+// ============================================================================================================
+//============== delete elements from mini cart with quantity wanted that controled in list card + - ==========
+// ============================================================================================================
+// i write them inside plus and minus
+
 
 // *****************************************************************
 // ====================== Not Products found Yet !!! ===================================
@@ -519,9 +481,12 @@ if (srcminicart==srcclickeditem) {
   <p><a href="#">${nameitemminicart}</a></p>
   <span class="price">
   <div>
-    <span class="current">$${priceitemminicart}</span>
+    <span >$${priceitemminicart}</span>
     <span class="fly-item"><span>2X</span></span>
   </div>
+  <input type="number" name="" id="theqtyminicart" min="1" value="1">
+  <p id="thesumminicart" class="current">$${priceitemminicart}</p>
+
   </span>
   </div>
   <a href="#" class="item-remove closeminicart">
@@ -566,7 +531,7 @@ if (srcminicart==srcclickeditem) {
   <td>
     <div class="qty-control flexitem">
       <button class="minus">-</button>
-      <input type="text" value="1" min="1" class="suminput">
+      <input type="text" value="1" min="1" class="suminput" onkeydown="return false">
       <button class="plus">+</button>
     </div>
   </td>
@@ -628,6 +593,7 @@ if (srcminicart==srcclickeditem) {
     console.log(theprice)
     let sum=Number(item.innerHTML.replace("$",""));
     let resum=(sum - Number(theprice)).toFixed(2)
+    console.log(theprice)
     resum=Number(resum)
   item.innerHTML =  `$ ${resum}`;
       });
@@ -641,9 +607,41 @@ if (srcminicart==srcclickeditem) {
   // =======================================================================
   // plus and minus buttons
   // =======================================================================
-  const plus=document.querySelectorAll(".plus")
-  const minus=document.querySelectorAll(".minus")
+
+// ********************** diffecult for use functions *******************************
+
+//   const getnewqty = (eo) => {
+//     // ========== change qty fir item mini cart when press plus
+// setInterval(() => {
   
+//   const gettheqty=Number(item.parentElement.querySelector(".suminput").value);
+// console.log(gettheqty)
+// const getthesrc=item.parentElement.parentElement.parentElement.querySelector("img").src;
+// console.log(getthesrc)
+
+// const theqtyminicart=document.querySelectorAll("#theqtyminicart")
+// console.log(theqtyminicart)
+
+
+// theqtyminicart.forEach(item => {
+// const qtyclicked=Number(item.value)
+//   console.log(qtyclicked)
+//   const theqtyminicartsrc=item.parentElement.parentElement.parentElement.querySelector("img").src
+//   console.log(theqtyminicartsrc)
+
+// if (getthesrc==theqtyminicartsrc) {
+//   console.log(item)
+//   item.value=gettheqty
+// }
+// });
+// }, 1000);
+
+//   };
+
+  const plus=document.querySelectorAll(".plus");
+  const minus=document.querySelectorAll(".minus");
+  
+
   // ================ plus ============================
   plus.forEach(item => {
     item.addEventListener("click",(eo) => {
@@ -653,14 +651,10 @@ if (srcminicart==srcclickeditem) {
   eo.target.parentElement.querySelector(".qty-control input").value=doplus;
   // ==================================================
   let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","")).toFixed(2);
-  console.log(theprice)
+  // let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector("#thesumminicart").innerHTML.replace("$","")).toFixed(2);
   let ourqty=Number(eo.target.parentElement.parentElement.querySelector(".qty-control input").value);
-  console.log(ourqty)
   let oursubtotal=(theprice*ourqty).toFixed(2);
-  console.log(oursubtotal)
   let finaltotal=eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal")
-  console.log(finaltotal)
-  console.log("hhhhhhhhhhhhhhhhhhhh")
   // finaltotal.innerHTML=`$${oursubtotal}`
   finaltotal.innerHTML=oursubtotal;
 
@@ -671,15 +665,48 @@ thetotal.forEach(item => {
   resum=Number(resum)
 item.innerHTML =  `$ ${resum}`;
     });
+// ========== change qty fir item mini cart when press plus
 
+setInterval(() => {
+  
+  let gettheqty=item.parentElement.querySelector(".suminput").value;
+  gettheqty=Number(gettheqty)
+const getthesrc=item.parentElement.parentElement.parentElement.querySelector("img").src;
+const theqtyminicart=document.querySelectorAll("#theqtyminicart")
+
+theqtyminicart.forEach(item => {
+// const qtyclicked=Number(item.value)
+  const theqtyminicartsrc=item.parentElement.parentElement.parentElement.querySelector("img").src
+
+if (getthesrc==theqtyminicartsrc) {
+  item.value=gettheqty
+}
+});
+
+const thesumminicart=document.querySelectorAll("#thesumminicart")
+
+thesumminicart.forEach(item => {
+
+  const theqtyminicartsrc=item.parentElement.parentElement.parentElement.querySelector("img").src
+
+  if (getthesrc==theqtyminicartsrc) {
+   let writeprice=Number(theprice)
+
+    item.innerHTML=(writeprice*gettheqty)
+    
+  }
+});
+}, 100);
     })
   });
-  
+
+
   //============== minus ==============================
   minus.forEach(item => {
     item.addEventListener("click",(eo) => {
       eo.preventDefault()
-  let inputminus=  Number(eo.target.parentElement.querySelector(".qty-control input").value);
+    // ================== change total list when click minus ==========================
+    let inputminus=  Number(eo.target.parentElement.querySelector(".qty-control input").value);
   let dominus=inputminus-1
   if (inputminus>1) {
     eo.target.parentElement.querySelector(".qty-control input").value=dominus
@@ -691,19 +718,53 @@ item.innerHTML =  `$ ${resum}`;
   
   finaltotal.innerHTML=`$${oursubtotal}`;
 
-    // ================== change total when click minus ==========================
+    // ================== change All totals when click minus ==========================
 thetotal.forEach(item => {
   let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","")).toFixed(2);
   console.log(theprice)
   let sum=Number(item.innerHTML.replace("$",""));
   let resum=(sum - Number(theprice)).toFixed(2)
   resum=Number(resum)
-item.innerHTML =  `$ ${resum}`;
+item.innerHTML = `$${resum}`;
     });
   }
 
+// ========== change qty fir item mini cart when press minus ======================
 
-    })
+setInterval(() => {
+  
+  const gettheqty=Number(item.parentElement.querySelector(".suminput").value);
+const getthesrc=item.parentElement.parentElement.parentElement.querySelector("img").src;
+
+const theqtyminicart=document.querySelectorAll("#theqtyminicart")
+
+
+theqtyminicart.forEach(item => {
+  const theqtyminicartsrc=item.parentElement.parentElement.parentElement.querySelector("img").src
+
+if (getthesrc==theqtyminicartsrc) {
+  item.value=gettheqty
+
+}
+});
+
+
+
+// const getthefinal=Number(item.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML);
+// const thesumminicart=document.querySelectorAll("#thesumminicart")
+// thesumminicart.forEach(item => {
+//   Number(item)
+//   const theqtyminicartsrc=item.parentElement.parentElement.parentElement.querySelector("img").src
+//   if (getthesrc==theqtyminicartsrc) {
+//     item.innerHTML=Number(getthefinal)
+//     let itemthesumminicart=Number(item.parentElement.parentElement.parentElement.querySelector("#thesumminicart").innerHTML);
+//     console.log(itemthesumminicart)
+    
+//   }
+// });
+}, 100);
+  
+})
   });
   
   // ==================================================================================================================
@@ -711,7 +772,11 @@ item.innerHTML =  `$ ${resum}`;
   // ==================================================================================================================
       thetotal.forEach(item => {
         // ====================== All pages =============================
+
+
         let theprice=Number(eo.target.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
+        console.log(theprice)
+
         let sum=Number(item.innerHTML.replace("$",""));
         let resum=(sum + theprice).toFixed(2)
   
