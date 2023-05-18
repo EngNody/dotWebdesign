@@ -7,15 +7,18 @@
   <link rel="stylesheet" href="signup.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <script defer src="signup.js"></script>
+  <!-- ionicons  web for icons -->
   <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <title>Login and Register</title>
+  <!--========================================================================================================  -->
+<title>Login and Register</title>
 </head>
 <body>
   
   <header>
 
-              <h2 class="logo">Logo</h2>
+              <!-- <h2 class="logo">EGY Store</h2> -->
+              <a href="E-commerce2.html" class="logo">EGY Store</a>
 
             <nav class="navegation">
               <a href="#">My Account</a>
@@ -28,6 +31,10 @@
   </header>
 
 <div class="wrapper">
+  <span class="icon-close">
+    <ion-icon name="close-outline"></ion-icon>
+  </span>
+
   <div class="form-box login">
     <h2>Login</h2>
     <form action="">
@@ -57,6 +64,47 @@
       </div>
     </form>
   </div>
+
+
+  <div class="form-box register">
+    <h2>Register</h2>
+    <form action="">
+
+      <div class="input-box">
+        <span class="icon">
+          <ion-icon name="person-outline"></ion-icon>
+          </span>
+        <input type="text" required>
+        <label>User</label>
+      </div>
+
+      <div class="input-box">
+        <span class="icon">
+          <ion-icon name="mail-outline"></ion-icon>
+        </span>
+        <input type="email" required>
+        <label>Email</label>
+      </div>
+
+      <div class="input-box">
+        <span class="icon">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </span>
+        <input type="password" required>
+        <label>Password</label>
+      </div>
+      <div class="remember-forget">
+        <label for=""><input type="checkbox">I agree to the terms $ conditions</label>
+        <!-- <a href="#">Forget Password?</a> -->
+      </div>
+      <button type="submit" class="btn">Register</button>
+      <div class="login-register">
+        <p>Already have an account?
+          <a href="#" class="login-link">Login</a></p>
+      </div>
+    </form>
+  </div>
+
 </div>
 
 

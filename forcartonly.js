@@ -531,7 +531,7 @@ if (srcminicart==srcclickeditem) {
   <td>
     <div class="qty-control flexitem">
       <button class="minus">-</button>
-      <input type="text" value="1" min="1" class="suminput" onkeydown="return false">
+      <input type="text" value="1" min="1" class="suminput" onkeydown="return false" disabled>
       <button class="plus">+</button>
     </div>
   </td>
