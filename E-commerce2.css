@@ -2436,11 +2436,16 @@ opacity: 1;
 .showdpt .dpt-trigger .ri-close-line{
 display: block !important;
 }
-
-#page:not(.page-home) .dpt-menu{
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* #page:not(.page-home) .dpt-menu{
   display: none;
+} */
+#page:not(.page-home) .off-canvas .dpt-menu {
+  /* display: none; */
+  margin-top: 25px;
 }
 
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 #page.showdpt .dpt-menu{
   display: block;
 }

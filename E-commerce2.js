@@ -103,7 +103,9 @@ function copymenu() {
   // =======================================================
   
   const triggerbutton=document.querySelector('.dpt-cat .dpt-trigger') 
+  console.log(triggerbutton)
   const thesite=document.querySelector(".site")
+  console.log(thesite)
   
   triggerbutton.addEventListener("click",(eo) => {
     eo.preventDefault();
