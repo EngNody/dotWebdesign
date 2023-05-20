@@ -6,9 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="E-commerce2.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="aboutpage.css">
-  <title>About</title>
+  <link rel="stylesheet" href="ordertrack.css">
+  <title>Order Track</title>
   <!-- <link rel="shortcut icon" href="./images/pexels-pixabay-414660.jpg" type="image/x-icon"> -->
+    <!-- ionicons  web for icons -->
+    <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <!--========================================================================================================  -->
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -51,8 +55,8 @@
           <div class="right">
             <ul class="flexitem main-links responsive1">
               <li><a href="sign up.html" class="li1 login">Login</a></li>
-                <li><a href="myaccount.html" class="li1">My Account</a></li>
-                <li><a href="ordertrack.html" class="li1">Order Tracking</a></li>
+              <li><a href="myaccount.html">My Account</a></li>
+              <li><a href="ordertrack.html">Order Tracking</a></li>
                 <li><a href="#" class="li1">USD<span class="icon-small">
                   <!-- <i class="ri-arrow-down-s-line"></i> -->
                 </span></a>
@@ -587,30 +591,74 @@
 
 <main>
 
-<div class="maincontainer">
-  <div class="sectionone">
-    <div class="bigcon">
-      <div class="imgframe">
-        <img src="images/lady17.jpeg" alt="">
-      </div>
-      <div class="textcontent">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio illum iusto expedita nam possimus fugiat sint laudantium tempore, dolorem facere laborum nemo? Rerum aliquam quisquam quam ut ad ratione illum.
-      </div>
+<!-- the first theme for order track -->
+
+<div class="containertrack">
+  <div class="details">
+    <div class="order">
+      <h1>Order <span>4567890</span></h1>
+    </div>
+    <div class="date">
+      <p>Expected Arrival 21/10/2021</p>
+      <p>USPS <b>3456788888890</b></p>
     </div>
   </div>
 
+<div class="track">
+  <ul id="progress" class="text-center">
+    <li class="active"></li>
+    <li class="active"></li>
+    <li class="active"></li>
+    <li class=""></li>
 
-  <div class="sectiontwo">
-    <div class="bigcon">
-      <div class="textcontent">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio illum iusto expedita nam possimus fugiat sint laudantium tempore, dolorem facere laborum nemo? Rerum aliquam quisquam quam ut ad ratione illum.
-      </div>
-      <div class="imgframe">
-        <img src="images/ccc1.png" alt="">
-      </div>
-    </div>
+  </ul>
+</div>
+
+<div class="lists">
+  <div class="list">
+    <img src="images/procesed1.png" alt="">
+    <p>Order <br> Procesed</p>
+  </div>
+
+  <div class="list">
+    <img src="images/hhh.png" alt="">
+    <p>Order <br> Shipping</p>
+  </div>
+
+  <div class="list">
+    <img src="images/shipping1.jpg" alt="">
+    <p>Order <br> Enroute</p>
+  </div>
+
+  <div class="list">
+    <img src="images/home4.jpg" alt="">
+    <p>Order <br> Arrived</p>
   </div>
 </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </main>
@@ -825,9 +873,10 @@
   </div>
 </div>
 
-
   </div>
 <script>
+
+
     // ========================================================
   // show menu
   // =======================================================
