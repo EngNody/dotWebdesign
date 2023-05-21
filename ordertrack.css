@@ -15,7 +15,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/* new !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* @font-face {
+  font-family: pop;
+  src: url(./Fonts/Poppins-Medium.tt);
+} */
+/* ====================================== */
 body{
   /* border: 2px solid blue; */
   width: 100%;
@@ -26,6 +31,110 @@ body{
   align-items: center; */
   line-height: 1.4;
 }
+
+/* ====================================================== */
+/* first way */
+/* ====================================================== */
+
+.main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* ///////////////////// */
+  font-family: pop; 
+   /*/////////////////////  */
+}
+
+.head{
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+}
+
+.head-1{
+  font-size: 33px;
+}
+
+.head-1 span{
+  color: #ff4732;
+}
+
+.head-2 {
+  font-style: 18px;
+  margin-top: 3px;
+}
+
+ul{
+  display: flex;
+  margin-top: 50px;
+}
+
+ul li{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================================= */
+/* second way */
+/* ================================================================= */
+
 
 .containertrack{
   /* border: 2px solid red; */
