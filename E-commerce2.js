@@ -576,58 +576,6 @@ if (minicart.classList.contains("show")) {
   // ========================================================================
   
   
-  // =============================================================================
-  //                page offer   -  write a review                           
-  // =============================================================================
-  
-  
-  
-  const ratethis=document.querySelector(".rate-this")
-  const namereview=document.querySelector(".namereview")
-  const summaryreview=document.querySelector(".summaryreview")
-  const textareareview=document.querySelector(".textareareview")
-  const reviewblockbody=document.querySelector(".review-block-body")
-  const newreview=document.querySelector("#newreview");
-  
-  
-  
-  // newreview.addEventListener("click",(eo) => {
-  //   eo.preventDefault()
-  
-  //   let d=new Date()
-  //   let time=d.getDate()
-  //   let month=d.getMonth()
-  //   let year=d.getFullYear()
-  
-  // const creatnewreview=`
-  // <li class="item">
-  // <div class="review-form">
-  //   <p class="person">${namereview.value}</p>
-  //   <p class="mini-text">On ${time}/${month}/${year}</p>
-  // </div>
-  // <div class="review-rating rating">
-  // <div class="stars"></div>
-  
-  // </div>
-  // <div class="review-title">
-  //   <p>${summaryreview.value}</p>
-  // </div>
-  // <div class="review-taxt">
-  //   <p>${textareareview.value}</p>
-  // </div>
-  // </li>
-  // `;
-  
-  // reviewblockbody.innerHTML+=creatnewreview;
-  
-  // setTimeout(() => {
-  //   console.log(namereview.value)
-  //   console.log(summaryreview.value)
-  //   console.log(textareareview.value) 
-  //   console.log(ratethis.innerHTML)
-  // }, 1000);
-  
-  // })
   
   // =====================================
   // add ri-heart-line 

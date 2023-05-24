@@ -211,6 +211,7 @@ height: 0;
   margin:60px auto;
   background: var(--cont);
   position: relative;
+  border-radius: 10px;
 }
 
 .details{
@@ -233,7 +234,8 @@ height: 0;
 }
 
 .track{
-  margin: 4em 0 8em;
+  width: 90%;
+  margin: 4em auto 8em;
 }
 
 #progress{
@@ -288,10 +290,14 @@ height: 10px;
 }
 
 .lists{
+  width: 110%;
   display: flex;
   gap: 2em;
   flex-wrap: wrap;
   align-items: center;
+  margin: auto;
+  margin-left: -40px;
+  text-align: center;
 }
 
 .list{
@@ -299,6 +305,7 @@ height: 10px;
   display: flex;
   gap: 1em;
   flex: 1 1 50px;
+  place-content: center;
 }
 
 .list p{
@@ -308,7 +315,6 @@ height: 10px;
 .list img{
   width: 50px;
 }
-
 
 @media (max-width:850px) {
   .details{
