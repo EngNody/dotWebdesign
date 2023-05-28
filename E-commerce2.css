@@ -3034,6 +3034,14 @@ left: 0;
   color: #ffed85;
 }
 
+.ccc{
+color: goldenrod;
+}
+
+.review-rating input{
+  user-select: none;
+  display: none;
+}
 .review-form form{
   margin-top: 2.5em;
 }

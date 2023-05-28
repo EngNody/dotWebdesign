@@ -837,20 +837,20 @@
                                   <div class="rating">
                                     <p>Are you satisfied? </p>
                                     <div class="rate-this">
-                                      <input type="radio" name="rating" id="star5">
-                                      <label for="star5"><i class="ri-star-fill"></i></label>
+                                      <input type="radio" name="rating" id="star5" class="star5">
+                                      <label for="star5"><i class="ri-star-fill l5"></i></label>
 
-                                      <input type="radio" name="rating" id="star4">
-                                      <label for="star4"><i class="ri-star-fill"></i></label>
+                                      <input type="radio" name="rating" id="star4" class="star4">
+                                      <label for="star4"><i class="ri-star-fill l4"></i></label>
 
-                                      <input type="radio" name="rating" id="star3">
-                                      <label for="star3"><i class="ri-star-fill"></i></label>
+                                      <input type="radio" name="rating" id="star3" class="star3">
+                                      <label for="star3"><i class="ri-star-fill l3"></i></label>
 
-                                      <input type="radio" name="rating" id="star2">
-                                      <label for="star2"><i class="ri-star-fill"></i></label>
+                                      <input type="radio" name="rating" id="star2" class="star2">
+                                      <label for="star2"><i class="ri-star-fill l2"></i></label>
 
-                                      <input type="radio" name="rating" id="star1">
-                                      <label for="star1"><i class="ri-star-fill"></i></label>
+                                      <input type="radio" name="rating" id="star1" class="star1">
+                                      <label for="star1"><i class="ri-star-fill l1"></i></label>
                                     </div>
                                   </div>
                                   <form action="">
@@ -1630,16 +1630,15 @@
   // =============================================================================
   
   
-  
+
   const ratethis=document.querySelector(".rate-this")
   const namereview=document.querySelector(".namereview")
   const summaryreview=document.querySelector(".summaryreview")
   const textareareview=document.querySelector(".textareareview")
   const reviewblockbody=document.querySelector(".review-block-body")
   const newreview=document.querySelector("#newreview");
-  
-  
-  
+  const allinput=document.querySelectorAll(".rate-this input")
+
   newreview.addEventListener("click",(eo) => {
     eo.preventDefault()
   
@@ -1648,16 +1647,18 @@
     let month=d.getMonth()
     let year=d.getFullYear()
   
+
   const creatnewreview=`
   <li class="item">
   <div class="review-form">
     <p class="person">${namereview.value}</p>
     <p class="mini-text">On ${time}/${month}/${year}</p>
   </div>
-  <div class="review-rating rating">
-  <div class="stars"></div>
-  
+
+  <div class="review-rating" style="direction: rtl;-webkit-rtl-ordering: visual;">
+    ${ratethis.innerHTML}
   </div>
+
   <div class="review-title">
     <p>${summaryreview.value}</p>
   </div>
@@ -1666,17 +1667,123 @@
   </div>
   </li>
   `;
-  
+  // new
   reviewblockbody.innerHTML+=creatnewreview;
-  
-  setTimeout(() => {
-    console.log(namereview.value)
-    console.log(summaryreview.value)
-    console.log(textareareview.value) 
-    console.log(ratethis.innerHTML)
-  }, 1000);
+
+
+
+  namereview.value="",
+    summaryreview.value="",
+    textareareview.value="";
+    // ratethis.innerHTML=oldrate;
   
   })
+
+// ==================================================================
+  const none=document.querySelector(".star1")
+const ntwo=document.querySelector(".star2")
+const nthree=document.querySelector(".star3")
+const nfour=document.querySelector(".star4")
+const nfive=document.querySelector(".star5")
+allinput.forEach(item => {
+  item.addEventListener("click",(eo) => {
+
+eo.target.classList.add("nnn")
+if (eo.target.classList == "star1 nnn") {
+  none.classList.add("nnn")
+  ntwo.classList.remove("nnn")
+  nthree.classList.remove("nnn")
+  nfour.classList.remove("nnn")
+  nfive.classList.remove("nnn")  
+}else if(eo.target.classList == "star2 nnn") {
+  none.classList.add("nnn")
+  ntwo.classList.add("nnn")
+  nthree.classList.remove("nnn")
+  nfour.classList.remove("nnn")
+  nfive.classList.remove("nnn")  
+}else if (eo.target.classList == "star3 nnn") {
+  none.classList.add("nnn")
+  ntwo.classList.add("nnn")
+  nthree.classList.add("nnn")
+  nfour.classList.remove("nnn")
+  nfive.classList.remove("nnn")  
+}else if (eo.target.classList == "star4 nnn") {
+  none.classList.add("nnn")
+  ntwo.classList.add("nnn")
+  nthree.classList.add("nnn")
+  nfour.classList.add("nnn")
+  nfive.classList.remove("nnn")  
+}else if (eo.target.classList == "star5 nnn") {
+  none.classList.add("nnn")
+  ntwo.classList.add("nnn")
+  nthree.classList.add("nnn")
+  nfour.classList.add("nnn")
+  nfive.classList.add("nnn")  
+}
+
+})
+})
+
+
+const alllabel=document.querySelectorAll(".rate-this label i")
+const lone=document.querySelector(".l1")
+const ltwo=document.querySelector(".l2")
+const lthree=document.querySelector(".l3")
+const lfour=document.querySelector(".l4")
+const lfive=document.querySelector(".l5")
+alllabel.forEach(item => {
+  item.addEventListener("click",(eo) => {
+
+// eo.target.classList.add("ccc")
+if (eo.target.classList == "ri-star-fill l1") {
+  lone.classList.add("ccc")
+}else if(eo.target.classList == "ri-star-fill l2") {
+  lone.classList.add("ccc")
+  ltwo.classList.add("ccc") 
+}else if (eo.target.classList == "ri-star-fill l3") {
+  lone.classList.add("ccc")
+  ltwo.classList.add("ccc")
+  lthree.classList.add("ccc")
+}else if (eo.target.classList == "ri-star-fill l4") {
+  lone.classList.add("ccc")
+  ltwo.classList.add("ccc")
+  lthree.classList.add("ccc")
+  lfour.classList.add("ccc")
+}else if (eo.target.classList == "ri-star-fill l5") {
+  lone.classList.add("ccc")
+  ltwo.classList.add("ccc")
+  lthree.classList.add("ccc")
+  lfour.classList.add("ccc")
+  lfive.classList.add("ccc")  
+}
+if (eo.target.classList == "ri-star-fill l1 ccc") {
+  ltwo.classList.remove("ccc")
+  lthree.classList.remove("ccc")
+  lfour.classList.remove("ccc")
+  lfive.classList.remove("ccc")  
+}else if(eo.target.classList == "ri-star-fill l2 ccc") {
+  lthree.classList.remove("ccc")
+  lfour.classList.remove("ccc")
+  lfive.classList.remove("ccc")  
+}else if (eo.target.classList == "ri-star-fill l3 ccc") {
+  lfour.classList.remove("ccc")
+  lfive.classList.remove("ccc")  
+}else if (eo.target.classList == "ri-star-fill l4 ccc") {
+  lfive.classList.remove("ccc")  
+}
+})
+})
+
+
+
+// setTimeout(() => {
+//   allinput.classList.remove("nnn")
+// alllabel.classList.remove("ccc")
+// }, 1000);
+// ====================================================================
+
+
+
 </script>
 
 
