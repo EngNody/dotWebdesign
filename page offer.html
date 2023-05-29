@@ -836,7 +836,7 @@
                                   <h4>Write a review</h4>
                                   <div class="rating">
                                     <p>Are you satisfied? </p>
-                                    <div class="rate-this">
+                                    <div class="rate-this wantdelete">
                                       <input type="radio" name="rating" id="star5" class="star5">
                                       <label for="star5"><i class="ri-star-fill l5"></i></label>
 
@@ -1639,46 +1639,8 @@
   const newreview=document.querySelector("#newreview");
   const allinput=document.querySelectorAll(".rate-this input")
 
-  newreview.addEventListener("click",(eo) => {
-    eo.preventDefault()
+
   
-    let d=new Date()
-    let time=d.getDate()
-    let month=d.getMonth()
-    let year=d.getFullYear()
-  
-
-  const creatnewreview=`
-  <li class="item">
-  <div class="review-form">
-    <p class="person">${namereview.value}</p>
-    <p class="mini-text">On ${time}/${month}/${year}</p>
-  </div>
-
-  <div class="review-rating" style="direction: rtl;-webkit-rtl-ordering: visual;">
-    ${ratethis.innerHTML}
-  </div>
-
-  <div class="review-title">
-    <p>${summaryreview.value}</p>
-  </div>
-  <div class="review-taxt">
-    <p>${textareareview.value}</p>
-  </div>
-  </li>
-  `;
-  // new
-  reviewblockbody.innerHTML+=creatnewreview;
-
-
-
-  namereview.value="",
-    summaryreview.value="",
-    textareareview.value="";
-    // ratethis.innerHTML=oldrate;
-  
-  })
-
 // ==================================================================
   const none=document.querySelector(".star1")
 const ntwo=document.querySelector(".star2")
@@ -1734,7 +1696,7 @@ const lfive=document.querySelector(".l5")
 alllabel.forEach(item => {
   item.addEventListener("click",(eo) => {
 
-// eo.target.classList.add("ccc")
+// eo.target.classList.add("ccc") wrong
 if (eo.target.classList == "ri-star-fill l1") {
   lone.classList.add("ccc")
 }else if(eo.target.classList == "ri-star-fill l2") {
@@ -1775,13 +1737,56 @@ if (eo.target.classList == "ri-star-fill l1 ccc") {
 })
 
 
+newreview.addEventListener("click",(eo) => {
+    eo.preventDefault()
+  
+    let d=new Date()
+    let time=d.getDate()
+    let month=d.getMonth()
+    let year=d.getFullYear()
+  
+
+  const creatnewreview=`
+  <li class="item">
+  <div class="review-form">
+    <p class="person">${namereview.value}</p>
+    <p class="mini-text">On ${time}/${month}/${year}</p>
+  </div>
+
+  <div class="review-rating" style="direction: rtl;-webkit-rtl-ordering: visual;">
+    ${ratethis.innerHTML}
+  </div>
+
+  <div class="review-title">
+    <p>${summaryreview.value}</p>
+  </div>
+  <div class="review-taxt">
+    <p>${textareareview.value}</p>
+  </div>
+  </li>
+  `;
+  // new
+  reviewblockbody.innerHTML+=creatnewreview;
+
+
+  namereview.value="",
+    summaryreview.value="",
+    textareareview.value="";
+  
+
+    const allinputwant=document.querySelectorAll(".wantdelete input")
+    console.log(allinputwant)
+    const alllabelwant=document.querySelectorAll(".wantdelete label i")
+    console.log(alllabelwant)
+
 
 // setTimeout(() => {
-//   allinput.classList.remove("nnn")
-// alllabel.classList.remove("ccc")
+  alllabelwant.forEach(item => {
+  item.classList.remove("ccc")
+  // item.style.color="var(--secondary-dark-color)"
+});
 // }, 1000);
-// ====================================================================
-
+  })
 
 
 </script>
