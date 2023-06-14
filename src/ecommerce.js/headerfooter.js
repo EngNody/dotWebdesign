@@ -1,3 +1,8 @@
+
+
+
+// use not now
+
 // body.style.backgroundColor='red'
 // ===================================================
 // copy menu for mobile
@@ -22,13 +27,13 @@ function copymenu() {
   
   }
   
-  copymenu()
+  copymenu();
   
   // ===========================================================
   // show mobile menu
   // ===========================================================
   
-  const menuButton=document.querySelector('.trigger');
+  // const menuButton=document.querySelector('.trigger');
   const closeButton=document.querySelector('.t-close');
   const addclass=document.querySelector('.site');
   
@@ -63,18 +68,7 @@ function copymenu() {
     this.closest('.has-child').classList.toggle('expand')
   }
   }
-  
-  
-  // slider
-  
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-  
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-  });
+
   
   // ==================================================
   // search buttom
@@ -113,70 +107,22 @@ function copymenu() {
   })
   
   
-  // ==============================================================
-  // product image slider ============ very important   
-  // ==============================================================
-  
-  const productThumb = new Swiper ('.small-image', {
-  loop: true,
-  spaceBetween: 10,
-  slidesPerView: 4,
-  freeMode: true,
-  watchSlidesProgress: true,
-  breakpoints: {
-    481: {
-      spaceBetween: 32,
-    }
-  }
-  })
-  
-  const productBig = new Swiper ('.big-image', {
-  loop: true,
-  autoHeight:true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  thumbs: {
-    swiper: productThumb,
-  },
-  })
-  
-  
-  
-  // ===========================================================
-  // stock products bar width percentage
-  // ===========================================================
-  
-  let stocks=document.querySelectorAll(".products .stock")
-  for (let x = 0; x < stocks.length; x++) {
-    let stock = stocks[x].dataset.stock;
-    
-  available=stocks[x].querySelector(".qty-available").innerHTML;
-  sold=stocks[x].querySelector(".qty-sold").innerHTML;
-  percent=sold*100/stock;
-  
-  stocks[x].querySelector(".available").style.width = percent + `%`
-  }
-  
-  
-  
   
   // ====================================================================
   
   
   //========================   show mini cart   ========================
   
-  // const iscart=document.querySelector(".iscart")
-  // const minicart=document.querySelector(".mini-cart")
+  const iscart=document.querySelector(".iscart")
   
   
-  // iscart.addEventListener("mouseover" , () => {
-  //   minicart.classList.add("showlist")
-  // })
-  // iscart.addEventListener("mouseout" , () => {
-  //   minicart.classList.remove("showlist")
-  // })
+  iscart.addEventListener("mouseover" , () => {
+    const minicart=document.querySelector(".mini-cart")
+    minicart.classList.add("showlist")
+  })
+  iscart.addEventListener("mouseout" , () => {
+    minicart.classList.remove("showlist")
+  })
   
   
   
@@ -309,32 +255,7 @@ if (minicart.classList.contains("show")) {
 }
       }
     })
-{  // =================== in cart page only=============================================
-  // ===================delete product from list=======================================
-  // // ==================================================================================
-  // ricloseelement.forEach(item => {
-  //   item.addEventListener("click",(eo) => {
-  //     eo.preventDefault();
-      
-  // // =========================================
-  // // let theprice=eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$","");
-  //   let theprice=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".finaltotal").innerHTML.replace("$",""));
-  
-  // thetotal.forEach(item => {
-  //         let sum=Number(item.innerHTML.replace("$",""));
-  
-  //   sum=Number(sum);
-  // if (sum>0) {
-  //   let resum= (sum - theprice).toFixed(2)
-  // item.innerHTML =  `$ ${resum}`;
-  // }
-  // })
-  // // =========================================
-  //   // ********************* delete product from mini cart ************************************
-  //   // eo.target.parentElement.parentElement.parentElement.remove()
-  //   })
-  // });
-}
+
   
   
   // ================================================================
@@ -362,53 +283,53 @@ if (minicart.classList.contains("show")) {
   // calc the total
   // =====================================================================
   
-  const thetotal=document.querySelectorAll(".thetotal")
-  const buybuttons=document.querySelectorAll(".newbutton")
+  // const thetotal=document.querySelectorAll(".thetotal")
+  // const buybuttons=document.querySelectorAll(".newbutton")
   
   
-  buybuttons.forEach(item => {
+  // buybuttons.forEach(item => {
     
-    item.addEventListener("click",(eo) => {
+  //   item.addEventListener("click",(eo) => {
   
-      eo.target.setAttribute("disabled","")
+  //     eo.target.setAttribute("disabled","")
   
   // =======================================================================
   // create element in mini-cart page when press buy button
   // =======================================================================
   
-  const nameitemminicart=eo.target.parentElement.parentElement.parentElement.querySelector("h3").innerText;
-  const srcitemminicart00=eo.target.parentElement.parentElement.parentElement.querySelector("img");    
-  const srcitemminicart=srcitemminicart00.src;    
-  const priceitemminicart=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));    
+  // const nameitemminicart=eo.target.parentElement.parentElement.parentElement.querySelector("h3").innerText;
+  // const srcitemminicart00=eo.target.parentElement.parentElement.parentElement.querySelector("img");    
+  // const srcitemminicart=srcitemminicart00.src;    
+  // const priceitemminicart=Number(eo.target.parentElement.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));    
   
-  const itembornminicart=`
-  <li class="item">
-  <div class="thumbnail object-cover">
-  <a href="#"><img src="${srcitemminicart}" alt=""></a>
-  </div>
-  <div class="item-content">
-  <p><a href="#">${nameitemminicart}</a></p>
-  <span class="price">
-  <div>
-    <span class="current">$${priceitemminicart}</span>
-    <span class="fly-item"><span>2X</span></span>
-  </div>
-  </span>
-  </div>
-  <a href="#" class="item-remove closeminicart">
-  <i class="ri-close-line"></i></a>
-  </li>
-  `;
+  // const itembornminicart=`
+  // <li class="item">
+  // <div class="thumbnail object-cover">
+  // <a href="#"><img src="${srcitemminicart}" alt=""></a>
+  // </div>
+  // <div class="item-content">
+  // <p><a href="#">${nameitemminicart}</a></p>
+  // <span class="price">
+  // <div>
+  //   <span class="current">$${priceitemminicart}</span>
+  //   <span class="fly-item"><span>2X</span></span>
+  // </div>
+  // </span>
+  // </div>
+  // <a href="#" class="item-remove closeminicart">
+  // <i class="ri-close-line"></i></a>
+  // </li>
+  // `;
   
-  const calccartbody=document.querySelector(".cart-body ul")
+  // const calccartbody=document.querySelector(".cart-body ul")
   
-  if (calccartbody.innerHTML=="Not Products found Yet !!! <br> <br>") {
-    calccartbody.innerHTML = itembornminicart;
+  // if (calccartbody.innerHTML=="Not Products found Yet !!! <br> <br>") {
+  //   calccartbody.innerHTML = itembornminicart;
   
-  }else{
-    calccartbody.innerHTML += itembornminicart;
+  // }else{
+  //   calccartbody.innerHTML += itembornminicart;
   
-  }
+  // }
   
   
   // =======================================================================
@@ -563,8 +484,8 @@ if (minicart.classList.contains("show")) {
   
   // =======================================================================
   })
-  })
-      });
+  // })
+      // });
   
   
   
@@ -793,30 +714,3 @@ if (minicart.classList.contains("show")) {
   // });
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  //     // const nameitem=eo.target.parentElement.parentElement.parentElement.querySelector("h1").innerText;
-  //     // const srcitem=eo.target.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("img").src;    
-  //     
