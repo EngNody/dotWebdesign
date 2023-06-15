@@ -91,9 +91,7 @@ function copymenu() {
   // =======================================================
   
   const triggerbutton=document.querySelector('.dpt-cat .dpt-trigger') 
-  console.log(triggerbutton)
   const thesite=document.querySelector(".site")
-  console.log(thesite)
   
   triggerbutton.addEventListener("click",(eo) => {
     eo.preventDefault();
@@ -181,11 +179,21 @@ function copymenu() {
   // ==================================+========================================
   // my red heart
   //===========================================================================
-  const wishlist=document.querySelector(".wishlist")
+  // const wishlist=document.querySelector(".wishlist")
   
-  wishlist.addEventListener("click",(eo) => {
-    // const favmob=document.querySelector(".favmob")
-  eo.preventDefault()
+  // wishlist.addEventListener("click",(eo) => {
+  //   // const favmob=document.querySelector(".favmob")
+  // eo.preventDefault()
+  // wishlist.classList.toggle("myheart")
+  // })
+    // ==================================+========================================
+  // my red heart xxxxxxxxxxxxxxxxxxxx
+  //===========================================================================
+  const wishlist=document.querySelector(".wishlist")
+  const wishlista=document.querySelector("#wishlista")
+
+  wishlista.addEventListener("click",(eo) => {
+  // eo.preventDefault()
   wishlist.classList.toggle("myheart")
   })
   
@@ -194,7 +202,6 @@ function copymenu() {
   // ============================================================
   const favmob=document.querySelector(".favmob")
   const showlist=document.querySelector(".showlist")
-  const wishlista=document.querySelector("#wishlista")
   
   wishlista.addEventListener("click",(eo) => {
     eo.preventDefault()
@@ -541,7 +548,6 @@ if (minicart.classList.contains("show")) {
   const checkheart=document.querySelectorAll(".contentheart")
   // const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
   const ourheart=document.querySelectorAll(".item .hoverable li.active a i")
-  console.log(ourheart)
   
   // ================== chang number items ==========================================
   // web-mode

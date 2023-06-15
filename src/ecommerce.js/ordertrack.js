@@ -102,13 +102,10 @@ four2.onclick = function() {
 
 
 const arrdate=document.querySelector(".arrdate")
-console.log(arrdate)
 
 let d=new Date()
 let time=d.getDate()+3
-console.log(time)
 let month=d.getMonth()+1
-console.log(month)
 let year=d.getFullYear()
 
 
