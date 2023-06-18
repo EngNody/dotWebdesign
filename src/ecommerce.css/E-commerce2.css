@@ -2414,7 +2414,11 @@ border-radius: 10px;
 visibility:hidden;
 opacity: 0;
 }
-
+@media screen and (max-width:500px){
+.favmob{
+  width: 500%;
+}
+}
 .showfavmob{
 visibility:visible;
 opacity: 1;
@@ -2526,8 +2530,10 @@ display: block !important;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto;
+  background-size: cover;
+  font-size: 16px;
   }
-  
+
   /* showing the first sub menu */
   
   /* .dpt-menu .has-child:nth-child(2) > ul {
@@ -2564,7 +2570,9 @@ display: block !important;
     right: 0;
     left: 0;
     bottom: 0;
-    background: linear-gradient(90deg,rgba(255, 255, 255, 0.982)0%,rgba(225, 225, 225, 0.451)0%);
+    /* background: linear-gradient(90deg,rgba(255, 255, 255, 0.982)0%,rgba(225, 225, 225, 0.451)0%); */
+    background: rgba(255, 255, 255, 0.767);
+
   }
   
   .dpt-menu .mega{ 
@@ -2608,7 +2616,9 @@ text-overflow: ellipsis;
 color: var(--light-text-color);
 }
 
-
+.products.one .row{
+  max-width: 90%;
+}
 @media screen and (min-width:768px){
 .products.one .row{
   /* ***************** problem*/
@@ -2925,6 +2935,11 @@ left: 0;
 .products .collapse .content{
   margin: 0 0 1.5em 2em;
   font-size: var(--font-small);
+}
+@media screen and (max-width:768px){
+  .products .collapse .content{
+    margin: 0 0 1.5em 0;
+  }
 }
 .products .collapse .content li span:first-child{
 min-width: 100px;
@@ -3548,7 +3563,7 @@ font-size: var(--font-small);
 }
 
 #thesumminicart{
-  border: 2px solid red;
+  /* border: 2px solid red; */
 width: fit-content;
 opacity: 0;
 }
@@ -3596,8 +3611,17 @@ position: fixed;
 top: 0;
 right: 0;
 max-width: 400px;
-/* width: 90%; */
 transition: all 1s;
+}
+@media screen and (max-width:500px){
+.mini-cart.show{
+width: 90%;
+}
+}
+@media screen and (min-width:992px){
+.mini-cart.show{
+  display: none;
+}
 }
 
 .dn{
@@ -4075,8 +4099,11 @@ transition: var(--trans-background-color) ,opacity 0.3s;
 /* @media screen and (min-width:992px){} */
 /* @media screen and (min-width:768px){ */
 /* =========================================================================================================== */
-/* @media screen and (min-width:768px){ */
-
+@media screen and (max-width:768px){
+  .header-top{
+    display: none !important;
+  }
+}
 /* @media screen and (max-width:800px){
 
   .header-top {
