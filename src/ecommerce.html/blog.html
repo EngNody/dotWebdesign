@@ -10,6 +10,8 @@
   <script defer src="../ecommerce.js/E-commerce2.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
   
   <link
   rel="stylesheet"
@@ -17,6 +19,7 @@
 />
 
 <link rel="stylesheet" href="../ecommerce.css/blog.css">
+<script defer src="../ecommerce.js/blog.js"></script>
   <title>Blog</title>
 </head>
 <body id="body">
@@ -514,11 +517,14 @@
   <main>
 
 <!-- <h1 class="title"></h1> -->
+<!-- =================================== -->
+<!-- swiper-slider-3d-overflow -->
+<!-- =================================== -->
 
 <section id="trending" class="blog">
   <div class="container">
-<h3 class="text-center section-subheading">Trending Products</h3>
-<h1 class="text-center section-heading">Trending Food</h1>
+<!-- <h3 class="text-center section-subheading">Trending Products</h3> -->
+<h1 class="text-center section-heading">Trending Products</h1>
   </div>
   <div class="container">
     <div class="swiper trending-slider">
@@ -737,7 +743,7 @@
     <ion-icon name="arrow-back-outline"></ion-icon>
   </div>
   <div class="swiper-pagination"></div>
-  
+
   <div class="swiper-button-next slider-arrow">
     <ion-icon name="arrow-forward-outline"></ion-icon>
   </div>
@@ -748,6 +754,101 @@
   </div>
   </div>
 </section>
+
+
+<!-- ===================================================
+recent posts and topics
+=================================================== -->
+
+<section class="topic">
+
+<div class="topiccontainer">
+<div class="conh3">
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sed sequi, nostrum repellendus eligendi numquam modi voluptas itaque consequuntur, facilis, nam rerum fugiat ad ipsa alias vero fugit velit eveniet.</h3>
+  
+</div>
+<div class="conimg">
+  <img src="./images/background.11.webp" alt="">
+  
+</div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- ================================ -->
+<!-- auto slider -->
+<!-- ================================ -->
+
+
+<div class="wrapper autoslider">
+  <i id="left" class="fa-solid fa-angle-left"></i>
+  <ul class="carousel">
+    <li class="card">
+      <div class="img"><img src="images/card slider images/images/img-1.jpg" alt="img" draggable="false"></div>
+      <h2>Blanche Pearson</h2>
+      <span>Sales Manager</span>
+    </li>
+    <li class="card">
+      <div class="img"><img src="images/card slider images/images/img-2.jpg" alt="img" draggable="false"></div>
+      <h2>Joenas Brauers</h2>
+      <span>Web Developer</span>
+    </li>
+    <li class="card">
+      <div class="img"><img src="images/card slider images/images/img-3.jpg" alt="img" draggable="false"></div>
+      <h2>Lariach French</h2>
+      <span>Online Teacher</span>
+    </li>
+    <li class="card">
+      <div class="img"><img src="images/card slider images/images/img-4.jpg" alt="img" draggable="false"></div>
+      <h2>James Khosravi</h2>
+      <span>Freelancer creator</span>
+    </li>
+    <li class="card">
+      <div class="img"><img src="images/card slider images/images/img-5.jpg" alt="img" draggable="false"></div>
+      <h2>Kristina Zasiadko</h2>
+      <span>Bank Manager</span>
+    </li>
+    <li class="card">
+      <div class="img"><img src="images/card slider images/images/img-6.jpg" alt="img" draggable="false"></div>
+      <h2>Donald Horton</h2>
+      <span>App Designer</span>
+    </li>
+  </ul>
+  <i id="right" class="fa-solid fa-angle-right"></i>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </main>
 
@@ -970,30 +1071,7 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js" id="script-swiper"></script>
-  <script>
-  
-      const trendingSlider = new Swiper('.trending-slider', {
-        effect: 'coverflow',
-  grabCursor: true,
-  centeredSlides: true,
-  loop: true,
-  slidesPerView: 'auto',
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 100,
-    modifier: 2.5,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  }
-      })
-</script>
+
 
 
 
@@ -1006,42 +1084,3 @@
 
 
 
-
-
-
-
-<!-- //   pagination: {
-  //     el: '.swiper-pagination',
-  //   },
-  //   observer: true,
-  //         observeParents: true
-  // });
-  
-      // ==============================================================
-    // product image slider ============ very important   
-    // ==============================================================
-    
-    // const productThumb = new Swiper ('.small-image', {
-    // loop: true,
-    // spaceBetween: 10,
-    // slidesPerView: 4,
-    // freeMode: true,
-    // watchSlidesProgress: true,
-    // breakpoints: {
-    //   481: {
-    //     spaceBetween: 32,
-    //   }
-    // }
-    // })
-    
-    // const productBig = new Swiper ('.big-image', {
-    // loop: true,
-    // autoHeight:true,
-    // navigation: {
-    //   nextEl: '.swiper-button-next',
-    //   prevEl: '.swiper-button-prev',
-    // },
-    // thumbs: {
-    //   swiper: productThumb,
-    // },
-    }) -->
