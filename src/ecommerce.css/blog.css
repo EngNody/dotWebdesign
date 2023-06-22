@@ -4,8 +4,8 @@
 /* ===================================== */
 main{
   width: 100%;
-  box-shadow: 0 0 10px rgb(66, 65, 65);
-  margin:50px auto;
+  /* box-shadow: 0 0 10px rgba(66, 65, 65, 0.147); */
+  margin:50px auto ;
   padding: 10px;
 }
 .blog .container{
@@ -13,10 +13,11 @@ main{
   padding: 0 1rem;
   margin: 0 auto;
   }
-  .blog .text-center{
+  /* .blog .text-center{
     text-align: center;
-  }
-  .blog .section-heading{
+  } */
+  .blog .section-heading ,.text-center.section-heading{
+    text-align: center;
   font-size: 3rem;
   color: var(--primary-color) !important;
   padding: 2rem 0;
@@ -24,11 +25,11 @@ main{
   #trending{
     padding: 4rem 0;
   }
-  @media (max-width:1440px) {
+  /* @media (max-width:1440px) {
   #trending{
     padding: 7rem 0;
   }
-  }
+  } */
   
   #trending .trending-slider{
     /* border: 2px solid blue; */
@@ -193,7 +194,7 @@ recent posts and topics
 .topic{
   width: 80%;
   box-shadow: 0 0 50px black;
-  margin: auto;
+  margin:50px auto 150px;
   padding: 50px 0;
 }
 
@@ -212,13 +213,16 @@ padding: 30px;
 }
 
 .topiccontainer .conh3 h3{
-
+  font-size: 20px;
+  font-weight: 500;
 }
 .topiccontainer .conimg{
+  /* border: 2px solid blue; */
 flex:50%;
+padding: 0 5%;
 }
 .topiccontainer .conimg img{
-width: 80%;
+height: 100%;
 }
 
 

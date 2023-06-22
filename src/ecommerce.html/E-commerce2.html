@@ -18,7 +18,6 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
 
-
 <!-- <title>E-commerce Website 2</title> -->
 <title>EGY Store</title>
 </head>
@@ -685,7 +684,22 @@
                   </div>
 
       </div>
-      <div class="swiper-pagination"></div>
+      <!-- <div class="swiper-pagination"></div> -->
+
+  <!-- add pagination -->
+<div class="trending-slider-control">
+  <div class="swiper-button-prev slider-arrow">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </div>
+  <div class="swiper-pagination"></div>
+
+  <div class="swiper-button-next slider-arrow">
+    <ion-icon name="arrow-forward-outline"></ion-icon>
+  </div>
+  <!-- <div class="swiper-pagination"></div> -->
+
+</div>
+      <!-- =--------------------------------------------------- -->
 
         </div>
 
@@ -1752,18 +1766,49 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js" id="script-swiper"></script>
 <script>
 
-    const swiper = new Swiper('.swiper', {
+  // for remove images only !!!!!!!!!!!!!
 
-  pagination: {
-    el: '.swiper-pagination',
-  },
-  observer: true,
-        observeParents: true
-});
+//     const swiper = new Swiper('.swiper', {
 
-    // ==============================================================
-  // product image slider ============ very important   
-  // ==============================================================
+//   pagination: {
+//     el: '.swiper-pagination',
+//   },
+//   observer: true,
+//         observeParents: true
+// });
+
+
+
+// =====================================================
+// swiper-slider-3d-overflow
+// =====================================================
+
+const swiper = new Swiper('.swiper', {
+  effect: 'coverflow',
+grabCursor: true,
+centeredSlides: true,
+loop: true,
+slidesPerView: 'auto',
+coverflowEffect: {
+rotate: 0,
+stretch: 0,
+depth: 100,
+modifier: 2.5,
+},
+pagination: {
+el: '.swiper-pagination',
+clickable: true,
+},
+navigation: {
+nextEl: '.swiper-button-next',
+prevEl: '.swiper-button-prev',
+}
+})
+
+
+    // =======================================================================
+  // product image slider ============ very important   => offer page codes
+  // =========================================================================
   
   // const productThumb = new Swiper ('.small-image', {
   // loop: true,
