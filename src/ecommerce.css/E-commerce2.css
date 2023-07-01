@@ -1202,10 +1202,10 @@ text-align: center;
     opacity: 1 !important;
     transition: all 0.5s;
     }
-  .swiper-button-prev:hover{
+    .prevhome{
     left: 0 !important;
   }
-  .swiper-button-next:hover{
+.nexthome{
 right: 0 !important;
   }
   /* ============================================= */
