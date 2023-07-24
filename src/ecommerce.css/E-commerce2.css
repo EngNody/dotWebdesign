@@ -317,10 +317,18 @@ margin-bottom: 1.8em;
 border-bottom: 1px solid var(--border-color);
 }
 .trigger{
+  /* border: 2px solid blue; */
   font-style:1.5em;
 display: flex;
+flex-direction: column;
 padding: 0.25em;
-margin-right: 0.5em;
+margin:0 0.5em;
+}
+.header-nav .trigger .line{
+  border: 2px solid white;
+  width: 30px;
+  height: 7px;
+  background-color: black;
 }
 .newbutton{
   all: unset;
@@ -435,6 +443,7 @@ border-radius:var(--percent50) ;
   border: 2px solid blue;
   display: none;
 }
+
 .checkheart{
   /* border: 2px solid blue; */
 position: relative;
@@ -603,10 +612,10 @@ overflow: hidden;
   }
 
 
-  nav li.has-child{
-    /* border: 2px solid blue; */
-padding: 10px 0 0 0;
-}
+  /* nav li.has-child{
+     border: 2px solid blue; 
+padding: 0 0 10px 0;
+} */
 
 nav li.has-child span{
   /* border: 2px solid blue; */
@@ -820,24 +829,33 @@ overflow: hidden;
 .dpt-cat .dpt-head .mini-text{
   color: var(--light-bg-color);
 }
-.dpt-cat .dpt-trigger ,.dpt-cat .dpt-head .ri-close-line{
+.dpt-cat .dpt-trigger ,.dpt-cat .dpt-head{
   /* border: 2px solid red; */
   position: absolute;
-right: 0;
-top: 0;
+/* right: 0; */
+/* top: 0; */
 padding: 1.7em;
 /* height: 60px; 
  width: 60px; */
 
 }
+
+.dpt-cat .dpt-trigger{
+  right: 0;
+  top: 0;
+}
 .mini-text{
   font-size: var(--font-smaller);
   color: var(--light-text-color);
 }
-.dpt-cat .dpt-head .ri-close-line{
+.dpt-cat .dpt-head .newclose{
   padding:1em;
   font-size: 25px;
   font-weight: bold;
+  position: absolute;
+  font-size: 25px !important;
+  top: 10px;
+  right: 7px;
 }
 
 
@@ -2335,7 +2353,18 @@ padding: 0.5em 0;
 color: var(--light-text-color);
 transition: var(--trans-color);
 }
-
+.icon-search{
+  font-size: 21px;
+  font-weight: bolder !important;
+}
+.search-buttom  .icon-search{
+  padding: 0.80em 0.1em;
+}
+.mobile-hide .icon-search::before{
+  position: absolute;
+  left: 0;
+  top: 14px;
+}
 .menu-buttom nav li a:hover{
 color: var(--dark-color);
 }
@@ -2345,8 +2374,11 @@ color: var(--dark-color);
 /* position: relative; */
   color: var(--font-small);
   padding: 0 25%;
+  margin-bottom: 7px;
   }
-
+.icon-user{
+  font-size: x-large;
+}
   /* @media screen and (max-width:500px){
     .menu-buttom{
     height: 150px;
@@ -2365,11 +2397,11 @@ color: var(--dark-color);
   }
   } */
 
-  .menu-buttom nav li a i{
+  .menu-buttom nav li a .animi{
     /* border: 2px solid blue; */
 
 font-size: 1.25em; 
-padding: 0 25%;
+padding: 5px 25%;
 
  }
 
@@ -2403,6 +2435,11 @@ will-change: visibility 0.5s,opacity 0.5s;
   position: absolute;
   right: 10px;
   top: -130%;
+}
+.search-buttom .t-close span{
+  /* border: 2px solid blue; */
+  top: -8px;
+color: white;
 }
 .search-buttom .t-close:hover{
   background-color: var(--primary-color);
@@ -2449,6 +2486,11 @@ opacity: 1;
 max-height: 380px;
 overflow: auto;
 }
+
+.checkheart{
+  font-size: 1.20em !important;
+  color: red !important;
+}
 /* ============================================= */
 /* overlay */
 /* ============================================= */
@@ -2482,12 +2524,12 @@ opacity: 1;
 /* .showdpt .dpt-cat .dpt-trigger, */
 
 .page-home .dpt-cat .dpt-trigger ,
-.dpt-trigger .ri-close-line,
-.showdpt .dpt-trigger .ri-menu-3-line{
+.dpt-trigger .newclose,
+.showdpt .dpt-trigger .newmenu{
   display: none;
 }
 
-.showdpt .dpt-trigger .ri-close-line{
+.showdpt .dpt-trigger .newclose{
 display: block !important;
 }
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -2512,12 +2554,13 @@ display: block !important;
 /* Departments menu */
 .dpt-menu{
   position: absolute;
-  top: var(--percent100);
+  /* top: var(--percent100); */
   width: 300px;
   background-color: var(--white-color);
   border: 1px solid var(--border-color);
   border-top: 0;
   border-bottom:0;
+  top: 100px;
   }
   
   .dpt-menu ul{
@@ -2953,7 +2996,7 @@ position: absolute;
 left: 0;
 }
 .products .collapse .content{
-  margin: 0 0 1.5em 2em;
+  margin: 0 0 1.5em 1em;
   font-size: var(--font-small);
 }
 @media screen and (max-width:768px){
@@ -2983,6 +3026,7 @@ text-transform: uppercase;
 }
 
 .products .collapse .content{
+  width: 95%;
   display: none;
 }
 
@@ -3014,7 +3058,7 @@ border-top: 1px solid var(--border-color);
 .products .review-block-head >a{
   display: block;
 font-size: 1.25em;
-width: var(--percent100);
+width: 90%;
 margin-top: 1em;
 text-align: center;
 }

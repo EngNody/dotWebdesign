@@ -33,7 +33,7 @@ function copymenu() {
   // show mobile menu
   // ===========================================================
   
-  // const menuButton=document.querySelector('.trigger');
+  const menuButton=document.querySelector('.trigger');
   const closeButton=document.querySelector('.t-close');
   const addclass=document.querySelector('.site');
   
@@ -97,9 +97,9 @@ function copymenu() {
   // =======================================================
   
   const triggerbutton=document.querySelector('.dpt-cat .dpt-trigger') 
-  console.log(triggerbutton)
+  // console.log(triggerbutton)
   const thesite=document.querySelector(".site")
-  console.log(thesite)
+  // console.log(thesite)
   
   triggerbutton.addEventListener("click",(eo) => {
     eo.preventDefault();
@@ -193,6 +193,7 @@ function copymenu() {
   if (showsearch.classList.contains="xxx") {
     showsearch.classList.remove("xxx")
   }
+  
   })
   
   
@@ -263,7 +264,7 @@ if (minicart.classList.contains("show")) {
   // ================================================================
   
   
-  const totaljs=document.querySelectorAll(".totaljs")
+  // const totaljs=document.querySelectorAll(".totaljs")
   
   
   totaljs.forEach(item => {
@@ -461,18 +462,18 @@ if (minicart.classList.contains("show")) {
   // ==================================================================================================================
   // =================  the total different between cart page and other pages =========================================
   // ==================================================================================================================
-      thetotal.forEach(item => {
-        // ====================== All pages =============================
-        let theprice=Number(eo.target.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
-        console.log(theprice)
-        let sum=Number(item.innerHTML.replace("$",""));
-        console.log(sum)
-        let resum=(sum + theprice).toFixed(2)
-        console.log(resum)
+      // thetotal.forEach(item => {
+      //   // ====================== All pages =============================
+      //   let theprice=Number(eo.target.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
+      //   console.log(theprice)
+      //   let sum=Number(item.innerHTML.replace("$",""));
+      //   console.log(sum)
+      //   let resum=(sum + theprice).toFixed(2)
+      //   console.log(resum)
   
-        resum=Number(resum)
+      //   resum=Number(resum)
       
-      item.innerHTML =  `$ ${resum}`;
+      // item.innerHTML =  `$ ${resum}`;
   //     // ======================== cart page only ===================================
   // let ourqty=Number(eo.target.parentElement.parentElement.querySelector(".qty-control input").value);
   //     const oursubtotal=(resum*ourqty)
@@ -483,7 +484,7 @@ if (minicart.classList.contains("show")) {
   //     item.innerHTML =`$ ${oursubtotal}`;
   
   // =======================================================================
-  })
+  // })
   // })
       // });
   
@@ -501,12 +502,12 @@ if (minicart.classList.contains("show")) {
   // =====================================
   // add ri-heart-line 
   // =====================================
-  const favnumber=document.querySelectorAll(".item-number-heart");
-  const favnumbermob=document.querySelectorAll(".item-number-heart-mob");
-  const checkheart=document.querySelectorAll(".contentheart")
+  // const favnumber=document.querySelectorAll(".item-number-heart");
+  // const favnumbermob=document.querySelectorAll(".item-number-heart-mob");
+  // const checkheart=document.querySelectorAll(".contentheart")
   // const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
-  const ourheart=document.querySelectorAll(".item .hoverable li.active a i")
-  console.log(ourheart)
+  // const ourheart=document.querySelectorAll(".item .hoverable li.active a i")
+  // console.log(ourheart)
   
   // ================== chang number items ==========================================
   // web-mode

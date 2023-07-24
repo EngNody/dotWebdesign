@@ -3,44 +3,44 @@
 // copy menu for mobile
 // ===================================================
 
-function copymenu() {
+// function copymenu() {
   
-  // copy inside .dpt-cat to .departments
-  const dptCategory=document.querySelector('.dpt-cat')
-  const dptPlace=document.querySelector('.departments')
-  dptPlace.innerHTML = dptCategory.innerHTML;
+//   // copy inside .dpt-cat to .departments
+//   const dptCategory=document.querySelector('.dpt-cat')
+//   const dptPlace=document.querySelector('.departments')
+//   dptPlace.innerHTML = dptCategory.innerHTML;
   
-  // copy inside nav to nav
-  const mainNav=document.querySelector('.header-nav nav')
-  const navPlace=document.querySelector('.off-canvas nav')
-  navPlace.innerHTML = mainNav.innerHTML;
+//   // copy inside nav to nav
+//   const mainNav=document.querySelector('.header-nav nav')
+//   const navPlace=document.querySelector('.off-canvas nav')
+//   navPlace.innerHTML = mainNav.innerHTML;
   
-   // copy .header-top to .thetop-nav
-  const topNav=document.querySelector('.header-top .wrapper')
-  const topPlace=document.querySelector('.thetop-nav')
-  topPlace.innerHTML = topNav.innerHTML;
+//    // copy .header-top to .thetop-nav
+//   const topNav=document.querySelector('.header-top .wrapper')
+//   const topPlace=document.querySelector('.thetop-nav')
+//   topPlace.innerHTML = topNav.innerHTML;
   
-  }
+//   }
   
-  copymenu()
+//   copymenu()
   
   // ===========================================================
   // show mobile menu
   // ===========================================================
   
-  const menuButton=document.querySelector('.trigger');
-  const closeButton=document.querySelector('.t-close');
-  const addclass=document.querySelector('.site');
+  // const menuButton=document.querySelector('.trigger');
+  // const closeButton=document.querySelector('.t-close');
+  // const addclass=document.querySelector('.site');
   
-  // function way
-  menuButton.addEventListener('click',function() {
-    addclass.classList.toggle('showmenu')
-  })
-  // another function way
-  closeButton.addEventListener('click',(e) =>{
-    e.preventDefault(); 
-    addclass.classList.toggle('showmenu')
-  })
+  // // function way
+  // menuButton.addEventListener('click',function() {
+  //   addclass.classList.toggle('showmenu')
+  // })
+  // // another function way
+  // closeButton.addEventListener('click',(e) =>{
+  //   e.preventDefault(); 
+  //   addclass.classList.toggle('showmenu')
+  // })
   
   
   
@@ -52,51 +52,51 @@ function copymenu() {
   // ============================================================
   
   // show sub menu on mobile
-  const submenu=document.querySelectorAll('.has-child .icon-small')
-  submenu.forEach((menu) => menu.addEventListener('click',toggle));
+  // const submenu=document.querySelectorAll('.has-child .icon-small')
+  // submenu.forEach((menu) => menu.addEventListener('click',toggle));
   
-  function toggle(e){
-  e.preventDefault(); 
+  // function toggle(e){
+  // e.preventDefault(); 
   
-  submenu.forEach((item) => item != this ? item.closest('.has-child').classList.remove('expand'):null);
-  if (this.closest('.has-child').classList != 'expand') {
-    this.closest('.has-child').classList.toggle('expand')
-  }
-  }
+  // submenu.forEach((item) => item != this ? item.closest('.has-child').classList.remove('expand'):null);
+  // if (this.closest('.has-child').classList != 'expand') {
+  //   this.closest('.has-child').classList.toggle('expand')
+  // }
+  // }
   
   // ==================================================
   // search buttom
   // ==================================================
   
-  const oursearch=document.querySelector(".t-search");
-  const tclose=document.querySelector(".search-close");
-  const showsearch=document.querySelector(".site");
+  // const oursearch=document.querySelector(".t-search");
+  // const tclose=document.querySelector(".search-close");
+  // const showsearch=document.querySelector(".site");
   
-  oursearch.addEventListener("click",() => {
-    showsearch.classList.toggle("xxx");
+  // oursearch.addEventListener("click",() => {
+  //   showsearch.classList.toggle("xxx");
   
-    if (favmob.classList.contains="showfavmob") {
-      favmob.classList.remove("showfavmob")
-      wishlist.classList.remove("myheart")
+  //   if (favmob.classList.contains="showfavmob") {
+  //     favmob.classList.remove("showfavmob")
+  //     wishlist.classList.remove("myheart")
   
-    }
-  })
+  //   }
+  // })
   
-  tclose.addEventListener("click",() => {
-    showsearch.classList.remove("xxx");
-  })
+  // tclose.addEventListener("click",() => {
+  //   showsearch.classList.remove("xxx");
+  // })
   
   // ========================================================
   // show menu
   // =======================================================
   
-  const triggerbutton=document.querySelector('.dpt-cat .dpt-trigger') 
-  const thesite=document.querySelector(".site")
+  // const triggerbutton=document.querySelector('.dpt-cat .dpt-trigger') 
+  // const thesite=document.querySelector(".site")
   
-  triggerbutton.addEventListener("click",(eo) => {
-    eo.preventDefault();
-  thesite.classList.toggle("showdpt");
-  })
+  // triggerbutton.addEventListener("click",(eo) => {
+  //   eo.preventDefault();
+  // thesite.classList.toggle("showdpt");
+  // })
   
   // ===========================================================
   // stock products bar width percentage
@@ -138,42 +138,42 @@ function copymenu() {
   // show cart on click
   // ====================================================================
   
-  const divtoshow=".mini-cart";
-  const divpopup=document.querySelector(divtoshow);
-  // const divpopup=document.querySelector(".mini-cart");
-  const divtrigger=document.querySelector(".cart-trigger");
-  const itemnumbercart=document.querySelector(".cart-trigger .fly-item")
-  
-  divtrigger.addEventListener('click',(e) => {
-    setTimeout(() => {
-      e.preventDefault();
-
-      if(!divpopup.classList.contains('show')) {
-        divpopup.classList.add("show")
-      // divpopup.classList.toggle("show")
-  // ********************************************
-      wishlist.classList.remove("myheart");
-      showsearch.classList.remove("xxx");
-      favmob.classList.remove("showfavmob");
-      itemnumbercart.classList.add("dn");
-      }
-    }, 250);
-      // e.preventDefault();
-  })
-  
-  // -------------- auto close by click outside .cart-trigger --------------
-  
-  document.addEventListener("click",(e) => {
-  //   const divtoshow=".mini-cart";
+  // const divtoshow=".mini-cart";
   // const divpopup=document.querySelector(divtoshow);
+  // // const divpopup=document.querySelector(".mini-cart");
+  // const divtrigger=document.querySelector(".cart-trigger");
+  // const itemnumbercart=document.querySelector(".cart-trigger .fly-item")
   
-    const isclosest=e.target.closest(divtoshow);
-    if (!isclosest && divpopup.classList.contains('show')) {
-      divpopup.classList.remove("show");
-      itemnumbercart.classList.remove("dn");
+  // divtrigger.addEventListener('click',(e) => {
+  //   setTimeout(() => {
+  //     e.preventDefault();
+
+  //     if(!divpopup.classList.contains('show')) {
+  //       divpopup.classList.add("show")
+  //     // divpopup.classList.toggle("show")
+  // // ********************************************
+  //     wishlist.classList.remove("myheart");
+  //     showsearch.classList.remove("xxx");
+  //     favmob.classList.remove("showfavmob");
+  //     itemnumbercart.classList.add("dn");
+  //     }
+  //   }, 250);
+  //     // e.preventDefault();
+  // })
   
-    }
-  })
+  // // -------------- auto close by click outside .cart-trigger --------------
+  
+  // document.addEventListener("click",(e) => {
+  // //   const divtoshow=".mini-cart";
+  // // const divpopup=document.querySelector(divtoshow);
+  
+  //   const isclosest=e.target.closest(divtoshow);
+  //   if (!isclosest && divpopup.classList.contains('show')) {
+  //     divpopup.classList.remove("show");
+  //     itemnumbercart.classList.remove("dn");
+  
+  //   }
+  // })
   
   
   // ==================================+========================================
@@ -189,28 +189,28 @@ function copymenu() {
     // ==================================+========================================
   // my red heart xxxxxxxxxxxxxxxxxxxx
   //===========================================================================
-  const wishlist=document.querySelector(".wishlist")
-  const wishlista=document.querySelector("#wishlista")
+  // const wishlist=document.querySelector(".wishlist")
+  // const wishlista=document.querySelector("#wishlista")
 
-  wishlista.addEventListener("click",(eo) => {
-  // eo.preventDefault()
-  wishlist.classList.toggle("myheart")
-  })
+  // wishlista.addEventListener("click",(eo) => {
+  // // eo.preventDefault()
+  // wishlist.classList.toggle("myheart")
+  // })
   
   // ========================================================================================================================
   //===== show mobile heart list when click on showlist 
   // ============================================================
-  const favmob=document.querySelector(".favmob")
-  const showlist=document.querySelector(".showlist")
+  // const favmob=document.querySelector(".favmob")
+  // const showlist=document.querySelector(".showlist")
   
-  wishlista.addEventListener("click",(eo) => {
-    eo.preventDefault()
-  favmob.classList.toggle("showfavmob");
+  // wishlista.addEventListener("click",(eo) => {
+  //   eo.preventDefault()
+  // favmob.classList.toggle("showfavmob");
   
-  if (showsearch.classList.contains="xxx") {
-    showsearch.classList.remove("xxx")
-  }
-  })
+  // if (showsearch.classList.contains="xxx") {
+  //   showsearch.classList.remove("xxx")
+  // }
+  // })
   
   
   // ===============================================================
@@ -218,60 +218,60 @@ function copymenu() {
   // ===============================================================
   
   // const closeminicart=document.querySelectorAll(".hide-class .closeminicart")
-  const minicart=document.querySelector(".mini-cart")
-  const closeminicart=document.querySelectorAll(".mini-cart .closeminicart")
-  const theminicart=document.querySelector(".mini-cart")
-  const ricloseelement=document.querySelectorAll(".ricloseelement")
+//   const minicart=document.querySelector(".mini-cart")
+//   const closeminicart=document.querySelectorAll(".mini-cart .closeminicart")
+//   const theminicart=document.querySelector(".mini-cart")
+//   const ricloseelement=document.querySelectorAll(".ricloseelement")
   
   
-  // minicart.forEach(item => {
-  // eo.target.parentElement.parentElement.style.display="none";
-    minicart.addEventListener("click",(eo) => {
+//   // minicart.forEach(item => {
+//   // eo.target.parentElement.parentElement.style.display="none";
+//     minicart.addEventListener("click",(eo) => {
   
-      if (eo.target.classList == "ri-close-line") {
+//       if (eo.target.classList == "ri-close-line") {
   
-    let theprice=Number(eo.target.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
+//     let theprice=Number(eo.target.parentElement.parentElement.querySelector(".current").innerHTML.replace("$",""));
   
-      thetotal.forEach(item => {
-        let sum=Number(item.innerHTML.replace("$",""));
+//       thetotal.forEach(item => {
+//         let sum=Number(item.innerHTML.replace("$",""));
   
-    if (sum>0) {
-    let resum= (sum - theprice).toFixed(2)
-      item.innerHTML =  `$ ${resum}`;
-    }
-      })
-  // **************** delete disabled when close product from mini cart ***************************************
-  const imgsrc=eo.target.parentElement.parentElement.querySelector(".object-cover a img").src;
-  const allimg=document.querySelectorAll(".keybuy img");
+//     if (sum>0) {
+//     let resum= (sum - theprice).toFixed(2)
+//       item.innerHTML =  `$ ${resum}`;
+//     }
+//       })
+//   // **************** delete disabled when close product from mini cart ***************************************
+//   const imgsrc=eo.target.parentElement.parentElement.querySelector(".object-cover a img").src;
+//   const allimg=document.querySelectorAll(".keybuy img");
   
-  allimg.forEach(item => {
-    const allimgsrc=item.src;
+//   allimg.forEach(item => {
+//     const allimgsrc=item.src;
   
-  if (imgsrc == allimgsrc) {
-  const imgbuy=item.parentElement.parentElement.parentElement.parentElement
-  const disablebuy=imgbuy.querySelector(".newbutton")
-  disablebuy.removeAttribute("disabled")
-  }
-    })
+//   if (imgsrc == allimgsrc) {
+//   const imgbuy=item.parentElement.parentElement.parentElement.parentElement
+//   const disablebuy=imgbuy.querySelector(".newbutton")
+//   disablebuy.removeAttribute("disabled")
+//   }
+//     })
 
-// **************************************************************
+// // **************************************************************
 
-if (minicart.classList.contains("show")) {
-  // **************************************************************
-    eo.target.parentElement.parentElement.remove();
-    eo.preventDefault()
-  // ============= for show mob mini cart when press close item ====================
-  setTimeout(() => {
-      if(!divpopup.classList.contains('show')) {
-        divpopup.classList.add("show")
-      }
-    }, 1); 
-    // ********************************************************
-}else{
-  eo.target.parentElement.parentElement.remove();
-}
-      }
-    })
+// if (minicart.classList.contains("show")) {
+//   // **************************************************************
+//     eo.target.parentElement.parentElement.remove();
+//     eo.preventDefault()
+//   // ============= for show mob mini cart when press close item ====================
+//   setTimeout(() => {
+//       if(!divpopup.classList.contains('show')) {
+//         divpopup.classList.add("show")
+//       }
+//     }, 1); 
+//     // ********************************************************
+// }else{
+//   eo.target.parentElement.parentElement.remove();
+// }
+//       }
+//     })
 {  // =================== in cart page only=============================================
   // ===================delete product from list=======================================
   // // ==================================================================================
