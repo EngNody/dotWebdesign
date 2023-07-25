@@ -1469,7 +1469,8 @@ transform: translateX(0);
 opacity: 1;
 }
 
-.products .hoverable li a{
+/* .products .hoverable li a{ */
+  .products .hoverable li .hana{
     /* border: 2px solid rgb(0, 255, 4); */
     color: #000;
   display: flex;
@@ -1483,17 +1484,20 @@ border-radius: var(--percent50);
 line-height: 1;
 background-color: var(--white-color);
 opacity: 0.7;
+user-select: none;
 transition: var(--trans-background-color) ,opacity 0.3s;
 }
 
-.products .hoverable li a:hover{
+.products .hoverable li .hana:hover{
 color: var(--white-color);
 background-color: var(--dark-color);
 opacity: 1;
 }
 
-.products .hoverable li.active a:hover {
-    background-color: var(--primary-color) !important;
+.products .hoverable li.active .hana:hover {
+    /* background-color: var(--primary-color) !important; */
+    background-color: #ff6b6b4d !important;
+    /* background-color: #f0c3cf !important; */
   }
 
 .products .hoverable li:not(.active){
@@ -1505,8 +1509,8 @@ opacity: 1;
 .products .hoverable li:last-child{
   transition-delay:0.1s ;
 }
-.products .hoverable li a i{
-  /* border: 2px solid red; */
+.products .hoverable li .hana i{
+  border: 2px solid red;
   padding: 10px;
 }
 .products .discount{
@@ -4127,18 +4131,21 @@ transition: var(--trans-background-color);
 
 .primary-color{
   /* background-color: var(--primary-color); */
-  background-color: rgb(255, 18, 66);
-    border:3px solid rgb(255, 18, 66);
-border: rgb(255, 18, 66);
-  color: #fff;
+  /* background-color: rgb(255, 18, 66) !important; */
+  color: red !important;
+    /* border:3px solid rgb(255, 18, 66) !important; */
+/* border: rgb(255, 18, 66); */
+  /* color: #fff !important; */
   opacity: 1 !important;
   border-radius: var(--percent50);
 /* padding:0.27em; */
-transition: var(--trans-background-color) ,opacity 0.3s;
+/* transition: var(--trans-background-color) ,opacity 0.3s; */
 
 }
 
-
+/* .item .hoverable li.active a .ri-heart-line{
+  color: red;
+} */
 
 
 

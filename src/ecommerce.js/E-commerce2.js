@@ -547,7 +547,8 @@
   const favnumbermob=document.querySelectorAll(".item-number-heart-mob");
   const checkheart=document.querySelectorAll(".contentheart")
   // const ourheart=document.querySelectorAll(".item .hoverable li a i.ri-heart-line")
-  const ourheart=document.querySelectorAll(".item .hoverable li.active a i")
+  const ourheart=document.querySelectorAll(".item .hoverable li.active div span")
+  // const ourminiheart=document.querySelectorAll(".item .hoverable li.active a .ri-heart-line::before")
   
   // ================== chang number items ==========================================
   // web-mode
@@ -579,7 +580,7 @@
   ourheart.forEach(item => {
     
   item.addEventListener("click",(eo) => {
-  eo.preventDefault();
+  eo.parentElement.preventDefault();
   
   eo.target.classList.toggle("primary-color")
   // eo.target.parentElement.classList.toggle("primary-color")
@@ -610,7 +611,7 @@
   
   // ============= Not Products Favorite Found Yet !!! <br> =========================
   checkheart.forEach(item => {
-    if (eo.target.classList=="ri-heart-line primary-color") {
+    if (eo.target.classList=="icon-heart ri-heart-line primary-color") {
   
       if (item.innerHTML=="Not Products Favorite Found Yet !!! <br>") {
         item.innerHTML = ourheartitem;
@@ -629,7 +630,7 @@
     }
   }, 1000);
   // ===================== remove element from mini cart===================================
-    if(eo.target.classList=="ri-heart-line"){
+    if(eo.target.classList=="icon-heart ri-heart-line"){
   
   const favitems=document.querySelectorAll(".favitems img");
   

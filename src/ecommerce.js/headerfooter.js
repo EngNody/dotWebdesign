@@ -570,7 +570,7 @@ if (minicart.classList.contains("show")) {
   
   // ============= Not Products Favorite Found Yet !!! <br> =========================
   checkheart.forEach(item => {
-    if (eo.target.classList=="ri-heart-line primary-color") {
+    if (eo.target.classList=="icon-heart ri-heart-line primary-color") {
   
       if (item.innerHTML=="Not Products Favorite Found Yet !!! <br>") {
         item.innerHTML = ourheartitem;
@@ -589,7 +589,7 @@ if (minicart.classList.contains("show")) {
     }
   }, 1000);
   // ===================== remove element from mini cart===================================
-    if(eo.target.classList=="ri-heart-line"){
+    if(eo.target.classList=="icon-heart ri-heart-line"){
   
   const favitems=document.querySelectorAll(".favitems img");
   
