@@ -42,8 +42,8 @@ function copymenu() {
     addclass.classList.toggle('showmenu')
   })
   // another function way
-  closeButton.addEventListener('click',(e) =>{
-    e.preventDefault(); 
+  closeButton.addEventListener('click',(eo) =>{
+    eo.preventDefault(); 
     addclass.classList.toggle('showmenu')
   })
   
@@ -79,6 +79,7 @@ function copymenu() {
   const showsearch=document.querySelector(".site");
   
   oursearch.addEventListener("click",() => {
+    // eo.preventDefault();
     showsearch.classList.toggle("xxx");
   
     if (favmob.classList.contains="showfavmob") {

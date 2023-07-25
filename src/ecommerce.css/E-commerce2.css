@@ -928,7 +928,7 @@ margin: -1.5em -1.5em 1.5em;
 background-color: var(--secondary-dark-color);
 border-bottom-right-radius: 160px 25px;
 }
-.off-canvas .canvas-head .logo a:hover{
+.off-canvas .canvas-head .logo .t-close:hover{
   color: var(--white-color);
 }
 .off-canvas .canvas-head .logo{
@@ -3258,6 +3258,7 @@ flex-direction: column;
 .single-category .sidebar,.single-category .section{
   /* border: 2px solid blue; */
   flex: 1 0 100%;
+  margin-top: 50px;
 }
 
 @media screen and (min-width:992px){
